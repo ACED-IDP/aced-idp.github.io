@@ -1,0 +1,23 @@
+# Documentation generator based on MkDocs
+# Automatically documents API references
+# References:
+#   https://www.mkdocs.org/
+#   https://mkdocstrings.github.io/recipes/
+
+site_name: ACED-IDP Documentation and Development
+
+plugins:
+  - search
+  
+theme:
+  name: "material"
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
