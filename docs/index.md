@@ -18,4 +18,4 @@ See the [ACED File Download](./ACED-file-download.md) page for instructions on d
 
 For development practices see the [Development](./development/4-deployment-management.md) section.
 
-![Main landing page for ACED IDP](./images/main-page.png)
+<a href="https://aced-idp.org">![Main landing page for ACED IDP](./images/main-page.png)</a>
