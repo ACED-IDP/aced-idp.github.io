@@ -32,14 +32,14 @@ Update Complete. ⎈Happy Helming!⎈
 Switch to the Local (Rancher Desktop) kubernetes context:
 
 ```sh
-kubectl config use-context rancher-desktop
-# Switched to context "rancher-desktop".
+➜ kubectl config use-context rancher-desktop
+Switched to context "rancher-desktop".
 ```
 
 Set the Local Secrets folder:
 
 ```sh
-➜ trash Secrets # Moves Secrets folder to trash, alternativt to 'rm -rf Secrets'
+➜ trash Secrets # Moves Secrets folder to trash, alternative to 'rm -rf Secrets'
 ➜ ln -s Secrets.local Secrets
 ```
 
@@ -64,7 +64,7 @@ Switched to context "arn:aws:eks:us-west-2:119548034047:cluster/aced-commons-dev
 Set the Development Secrets folder:
 
 ```sh
-➜ trash Secrets # Moves Secrets folder to trash, alternativt to 'rm -rf Secrets'
+➜ trash Secrets # Moves Secrets folder to trash, alternative to 'rm -rf Secrets'
 ➜ ln -s Secrets.development Secrets
 ```
 
@@ -89,7 +89,7 @@ Switched to context "arn:aws:eks:us-west-2:119548034047:cluster/aced-commons-sta
 Set the Staging Secrets folder:
 
 ```sh
-➜ trash Secrets # Moves Secrets folder to trash, alternativt to 'rm -rf Secrets'
+➜ trash Secrets # Moves Secrets folder to trash, alternative to 'rm -rf Secrets'
 ➜ ln -s Secrets.staging Secrets
 ```
 
@@ -114,7 +114,7 @@ Switched to context "arn:aws:eks:us-west-2:119548034047:cluster/aced-commons-pro
 Set the Production Secrets folder:
 
 ```sh
-➜ trash Secrets # Moves Secrets folder to trash, alternativt to 'rm -rf Secrets'
+➜ trash Secrets # Moves Secrets folder to trash, alternative to 'rm -rf Secrets'
 ➜ ln -s Secrets.production Secrets
 ```
 
