@@ -19,3 +19,8 @@ See the [ACED File Download](./ACED-file-download.md) page for instructions on d
 For development practices see the [Development](./development/4-deployment-management.md) section.
 
 <a href="https://aced-idp.org">![Main landing page for ACED IDP](./images/main-page.png)</a>
+
+## Source
+
+The code for this site lives [github.com/ACED-IDP/aced-idp.github.io](https://github.com/ACED-IDP/aced-idp.github.io) and is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+

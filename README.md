@@ -23,7 +23,7 @@ Running on a port other than 8000 is possible with the `--dev-addr <IP:PORT>` fl
 
 # Publishing to [aced-idp.github.io](https://aced-idp.github.io)
 
-The documentation site is automatically generated for every push to the main branch. To manually update the site run the `mkdocs gh-deploy --force` command:
+To update the site run the `mkdocs gh-deploy --force` command:
 
 ```sh
 ➜ mkdocs gh-deploy --force
