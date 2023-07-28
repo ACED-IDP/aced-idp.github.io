@@ -1,18 +1,8 @@
 # Documentation Site for the ACED Data Commons
 
-This mkdocs-based codebase deploys documentation to [aced-idp.github.io](https://aced-idp.github.io).
+This mkdocs-based codebase deploys documentation to [aced-idp.github.io](https://aced-idp.github.io)
 
-## ACED Commons Deployments & Sites
-
-| Deployment     | Site                                                                           |
-| -------------- | ------------------------------------------------------------------------------ |
-| Production     | [aced-idp.org](https://aced-idp.org)                                           |
-| Staging        | [staging.aced-idp.org](https://staging.aced-idp.org)                           |
-| Development    | [development.aced-idp.org](https://development.aced-idp.org)                   |
-| Status Monitor | [aced-idp.github.io/status-monitor](https://aced-idp.github.io/status-monitor) |
-| Documentation  | [aced-idp.github.io](https://aced-idp.github.io)                               |
-
-![Main landing page for ACED IDP](./docs/images/main-page.png)
+<a href="https://aced-idp.github.io">![Main landing page for ACED IDP](./docs/images/main-page.png)</a>
 
 
 # Local Development
