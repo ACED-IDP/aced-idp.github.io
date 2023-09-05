@@ -18,5 +18,5 @@ See the [ACED File Download](./ACED-file-download.md) page for instructions on d
 
 ## Source
 
-The code for this site lives [github.com/ACED-IDP/aced-idp.github.io](https://github.com/ACED-IDP/aced-idp.github.io) and is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+The code for this site lives at [github.com/ACED-IDP/aced-idp.github.io](https://github.com/ACED-IDP/aced-idp.github.io) and is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 

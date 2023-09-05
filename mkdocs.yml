@@ -4,7 +4,7 @@
 #   https://www.mkdocs.org/
 #   https://mkdocstrings.github.io/recipes/
 
-site_name: ACED-IDP Documentation and Development
+site_name: ACED-IDP Documentation
 
 plugins:
   - search
