@@ -33,3 +33,8 @@ INFO     -  Documentation built in 0.49 seconds
 INFO     -  Copying '/Users/beckmanl/code/aced-idp.github.io/site' to 'gh-pages' branch and pushing to GitHub.
 INFO     -  Your documentation should shortly be available at: https://aced-idp.github.io/
 ```
+
+## Terminal Image Sources
+
+- [ACED Upload](https://app.codeimage.dev/c8c39d33-c9d3-440f-9680-f4f7976676d9)
+- [ACED Download](https://app.codeimage.dev/d1c80a2d-cded-432e-9d2e-825a0e058996)

@@ -1,4 +1,4 @@
-# Welcome to the ACED Documentation!
+# Welcome to the ACED Documentation
 
 ## ACED Commons Deployments & Sites
 
