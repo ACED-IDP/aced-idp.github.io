@@ -1,10 +1,10 @@
-# ACED File Download (NVIDIA)
+# ACED File Download
 
 ## Download Steps
 
 1. Navigate to the [ACED data commons](https://aced-idp.org/)
 
-2. Log in with NVIDIA credentials through the 'Login from Microsoft' button.
+2. Log in with your credentials through either the 'Login from Google' or the 'Login from Microsoft' buttons.
 
     ![Login page](./images/login.png)
 
@@ -43,21 +43,23 @@
 10. Configure the gen3-client
 
         # This step uses the credentials.json file we downloaded earlier in Step 4
-        cd ~/Downloads
-        gen3-client configure --profile=nvidia --cred=./credentials.json --apiendpoint=https://aced-idp.org
+        gen3-client configure --profile=aced --cred=./credentials.json --apiendpoint=https://aced-idp.org
 
 11. Start the download
 
-        # This step will download all files to the ./nvidia directory
-        gen3-client download-multiple --profile=nvidia --manifest=./file-manifest.json --download-path=./nvidia
+        # This step will download all files to the ./aced-files directory
+        gen3-client download-multiple --profile=aced --manifest=./file-manifest.json --download-path=./aced-files
 
     ![Starting the file download](./images/file-download.png)
+
+<!-- Terminal image source: -->
+<!-- https://app.codeimage.dev/d1c80a2d-cded-432e-9d2e-825a0e058996 -->
 
 ## Restarting the Download
 
 If the download is interrupted the `--skip-completed` flag can be appended to the gen3-client command in order to restart the download while skipping any previously download files. More specifically it skips any file in the download directory that has the same filename and size as that in the file manifest.
 
-    # Preventing re-downloading existing files with the '--skip-completed' flag
-    gen3-client download-multiple --profile=nvidia --manifest=./file-manifest.json --download-path=./nvidia --skip-completed
+    # Prevent downloading existing files with the '--skip-completed' flag
+    gen3-client download-multiple --profile=<PROFILE NAME> --manifest=./file-manifest.json --download-path=./gen3-files --skip-completed
 
 ![Restarting the file download](./images/restart-file-download.png)
