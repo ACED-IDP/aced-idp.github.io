@@ -55,5 +55,4 @@ Please substitute these values with your own when running the upload steps.
     gen3_util files cp --duplicate_check --project_id aced-MyProject manifest/DocumentReference.ndjson bucket://aced-ohsu-production
     ```
 
-
 ![Starting the file upload](./images/file-upload.png)
