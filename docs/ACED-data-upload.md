@@ -49,7 +49,7 @@ Please substitute these values with your own when running the upload steps.
     gen3_util meta import dir ./aced-files --project_id aced-MyProject
     ```
 
-6. Upload the metadata to the S3 Bucket
+6. Upload the metadata to the the bucket
 
     ```sh
     gen3_util files cp --duplicate_check --project_id aced-MyProject manifest/DocumentReference.ndjson bucket://aced-ohsu-production
