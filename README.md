@@ -6,6 +6,14 @@ This mkdocs-based codebase deploys documentation to [aced-idp.github.io](https:/
 
 # Local Development
 
+```shell
+# setup local environment
+python -m venv venv
+source venv/bin/activate
+# install dependencies
+pip install -r requirements.txt
+```
+
 To start the documentation server run the `mkdocs serve` command:
 
 ```sh
