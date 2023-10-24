@@ -30,7 +30,7 @@ Running on a port other than 8000 is possible with the `--dev-addr <IP:PORT>` fl
 
 # Publishing to [aced-idp.github.io](https://aced-idp.github.io)
 
-The site is automatically built and published on every push to the main branch (using the Github Actions workflow file in [./github/workflows/publish.yml](./github/workflows/publish.yml)).
+The site is automatically built and published on every push to the main branch (using the Github Actions workflow file in [publish.yml](.github/workflows/publish.yml)).
 
 To skip this workflow add `[skip ci]` (or any [equivalent variation](https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs)) anywhere in the commit message.
 
