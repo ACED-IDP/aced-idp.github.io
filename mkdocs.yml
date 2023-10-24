@@ -6,6 +6,13 @@
 
 site_name: ACED-IDP Documentation
 
+nav:
+- index.md
+- ACED-project-workflow.md
+- ACED-file-upload.md
+- ACED-file-download.md
+- Status Monitor ↗: https://aced-idp.github.io/status-monitor
+
 plugins:
   - search
   

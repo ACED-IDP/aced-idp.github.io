@@ -1,22 +1,19 @@
-# Welcome to the ACED Documentation
+# Welcome to the ACED-IDP Portal Documentation
 
-## ACED Commons Deployments & Sites
+<a href="https://www.cancerresearchuk.org/funding-for-researchers/research-opportunities-in-early-detection-and-diagnosis/international-alliance-for-cancer-early-detection">![ACED logo](./images/aced_website_header.jpg)</a>
 
-| Deployment     | Site                                                                           |
-| -------------- | ------------------------------------------------------------------------------ |
-| Production     | [aced-idp.org](https://aced-idp.org)                                           |
-| Staging        | [staging.aced-idp.org](https://staging.aced-idp.org)                           |
-| Development    | [development.aced-idp.org](https://development.aced-idp.org)                   |
-| Status Monitor | [aced-idp.github.io/status-monitor](https://aced-idp.github.io/status-monitor) |
+This is the documentation for the [ACED-IDP Data Commons](https://aced-idp.org), serving the [International Alliance for Cancer Early Detection](https://www.cancerresearchuk.org/funding-for-researchers/research-opportunities-in-early-detection-and-diagnosis/international-alliance-for-cancer-early-detection)
 
+> The International Alliance for Cancer Early Detection (ACED) is a new £55 million partnership between Cancer Research UK, the Canary Center at Stanford University, the University of Cambridge, the Knight Cancer Institute at OHSU, University College London and the University of Manchester.
 
-## File Download
+> We are uniting world leading researchers to tackle the biggest challenges in early detection, an important area of unmet clinical need. Scientists in the Alliance are working together at the forefront of technological innovation to translate research into realistic ways to improve cancer diagnosis, which can be implemented into health systems and meaningfully benefit people with cancer.
 
-See the [ACED File Download](./ACED-file-download.md) page for instructions on downloading files using a file manifest.
+## Getting Started
+
+Please see the [Project Workflow](./ACED-project-workflow.md) page for instructions on how to create a project, add authorized users, and upload files with a manifest.
 
 <a href="https://aced-idp.org">![Main landing page for ACED IDP](./images/main-page.png)</a>
 
 ## Source
 
 The code for this site lives at [github.com/ACED-IDP/aced-idp.github.io](https://github.com/ACED-IDP/aced-idp.github.io) and is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
-
