@@ -4,8 +4,6 @@ title: Restrict access to some files
 
 > Note: the tools listed here are under development and may be subject to change
 
-# Restrict access to some files
-
 Some use cases need to limit to some files to a subset of project members.
 
 For example, given the example above, let's say we needed to restrict access to some files to only certain users.
