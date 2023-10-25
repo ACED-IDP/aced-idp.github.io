@@ -1,4 +1,4 @@
-# Welcome to the ACED-IDP Portal Documentation
+# Welcome to the ACED-IDP Documentation
 
 <a href="https://www.cancerresearchuk.org/funding-for-researchers/research-opportunities-in-early-detection-and-diagnosis/international-alliance-for-cancer-early-detection">![ACED logo](./images/aced_website_header.jpg)</a>
 
@@ -10,7 +10,7 @@ This is the documentation for the [ACED-IDP Data Commons](https://aced-idp.org),
 
 ## Getting Started
 
-Please see the [Project Workflow](./ACED-project-workflow.md) page for instructions on how to create a project, add authorized users, and upload files with a manifest.
+Please see the [Requirements](./requirements.md) page for instructions on how to installaing the required tools needed to create a project, add authorized users, and upload files with a manifest.
 
 <a href="https://aced-idp.org">![Main landing page for ACED IDP](./images/main-page.png)</a>
 

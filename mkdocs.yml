@@ -8,16 +8,27 @@ site_name: ACED-IDP Documentation
 
 nav:
 - index.md
-- ACED-project-workflow.md
-- ACED-file-upload.md
-- ACED-file-download.md
+- requirements.md
+- getting-started.md
+- Use Cases & Workflows:
+  - use-cases/index.md
+  - use-cases/use-case-1.md
+  - use-cases/use-case-2.md
+  - use-cases/use-case-3.md
+  - use-cases/restrict-access.md
 - Status Monitor ↗: https://aced-idp.github.io/status-monitor
 
 plugins:
   - search
+
+repo_url: https://github.com/ACED-IDP/aced-idp.github.io
+repo_name: ACED-IDP/aced-idp.github.io
   
 theme:
   name: "material"
+  features:
+    - navigation.expand
+    - navigation.indexes 
 
 markdown_extensions:
   - pymdownx.highlight:
