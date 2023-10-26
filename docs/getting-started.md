@@ -8,11 +8,11 @@ Use case: As an analyst, in order to share data with collaborators, I need a way
 
 The following guide details the steps a data contributor must take to submit a project to the ACED data commons.
 
-> In a Gen3 data commons, a semantic distinction is made between two types of data: “data files” and “metadata”. [more](https://gen3.org/resources/user/dictionary/#understanding-data-representation-in-gen3)
+> In a Gen3 data commons, a semantic distinction is made between two types of data: "data files" and "metadata". [more](https://gen3.org/resources/user/dictionary/#understanding-data-representation-in-gen3)
 
-A “data file” could be information like tabulated data values in a spreadsheet or a fastq/bam file containing DNA sequences. The contents of the file are not exposed to the API as queryable properties, so the file must be downloaded to view its content.
+A "data file" could be information like tabulated data values in a spreadsheet or a fastq/bam file containing DNA sequences. The contents of the file are not exposed to the API as queryable properties, so the file must be downloaded to view its content.
 
-“Metadata” are variables that help to organize or convey additional information about corresponding data files so that they can be queried via the Gen3 data commons’ API or viewed in the Gen3 data commons’ data exploration tool. In a Gen3 data dictionary, variable names are termed “properties”, and data contributors provide the values for these pre-defined properties in their data submissions.
+"Metadata" are variables that help to organize or convey additional information about corresponding data files so that they can be queried via the Gen3 data commons’ API or viewed in the Gen3 data commons’ data exploration tool. In a Gen3 data dictionary, variable names are termed "properties", and data contributors provide the values for these pre-defined properties in their data submissions.
 
 For the ACED data commons, we have created a data dictionary based on the FHIR data standard. The data dictionary is available [here](https://github.com/bmeg/iceberg-schema-tools)
 

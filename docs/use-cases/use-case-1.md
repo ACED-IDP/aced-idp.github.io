@@ -59,7 +59,7 @@ gen3_util files manifest upload --profile $GEN3_CLIENT_PROFILE
 ## Create metadata for the analysis files. In this example, create minimal metadata using information uploaded into indexd.
 
 ```sh
-gen3_util meta create indexd meta/
+gen3_util meta create meta/
 ```
 
 ## Optionally edit or validate the metadata
@@ -76,4 +76,4 @@ gen3_util meta publish meta/
 
 ## Check that your file and meta data have been successfully uploaded
 
-![image](https://github.com/ACED-IDP/gen3_util/assets/47808/c705eb32-f636-42e2-992e-e076f1b28cb8)
+<a href="https://aced-idp.org/explorer">![Gen3 File Explorer](https://github.com/ACED-IDP/gen3_util/assets/47808/c705eb32-f636-42e2-992e-e076f1b28cb8)</a>

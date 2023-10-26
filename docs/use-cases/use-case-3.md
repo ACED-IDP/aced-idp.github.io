@@ -36,7 +36,7 @@ gen3_util files manifest upload
 ## Create basic, minimal metadata for the project
 
 ```sh
-gen3_util meta create indexd /tmp/$PROJECT_ID
+gen3_util meta create /tmp/$PROJECT_ID
 ```
 
 ### Optional: edit or validate the metadata
@@ -60,5 +60,4 @@ gen3_util meta publish  /tmp/$PROJECT_ID
 
 ## View in portal
 
-<img alt="image" src="https://github.com/ACED-IDP/data_model/assets/47808/133ef835-63d6-473e-80ad-9c4e0de62651">
-
+<a href="https://aced-idp.org/explorer">![Gen3 File Explorer](https://github.com/ACED-IDP/gen3_util/assets/47808/d4d8c6bf-bb9a-49cf-affc-34daf78ce92c)</a>

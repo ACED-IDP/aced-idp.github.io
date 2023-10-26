@@ -6,7 +6,7 @@ title: Upload files and associate them with a patient, specimen or observation
 
 ## Create a project in authorization system
 
-> see above
+> See [Create a project in authorization system](/getting-started/#create-a-project-in-authorization-system)
 
 ## Add file to the project, we assign a patient identifier to the file
 
@@ -99,4 +99,4 @@ gen3_util meta publish  /tmp/$PROJECT_ID
 
 ## Check that your file and meta data have been successfully uploaded
 
-<img width="1485" alt="image" src="https://github.com/ACED-IDP/gen3_util/assets/47808/d4d8c6bf-bb9a-49cf-affc-34daf78ce92c">
+<a href="https://aced-idp.org/explorer">![Gen3 File Explorer](https://github.com/ACED-IDP/gen3_util/assets/47808/d4d8c6bf-bb9a-49cf-affc-34daf78ce92c)</a>
