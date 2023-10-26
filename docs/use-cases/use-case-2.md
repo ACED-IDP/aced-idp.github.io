@@ -60,6 +60,8 @@ gen3_util files manifest put \
 gen3_util files manifest ls | grep file_name
 ```
 
+If incorrect, then delete the manifest `gen3_util files manifest rm` and then re-add all files using the `gen3_util files manifest put` command shown previously.
+
 ## Upload and index the files
 
 ```text
