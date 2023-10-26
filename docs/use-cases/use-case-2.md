@@ -66,7 +66,7 @@ gen3_util files manifest upload
 
 ```text
 # create basic, minimal metadata for the project
-gen3_util meta create indexd /tmp/$PROJECT_ID
+gen3_util meta create /tmp/$PROJECT_ID
 ```
 
 ### Optional: edit the metadata
