@@ -55,6 +55,11 @@ gen3_util files manifest put \
 
 ```
 
+## Sanity check the manifest contains the intended files
+```sh
+gen3_util files manifest ls | grep file_name
+```
+
 ## Upload and index the files
 
 ```text
