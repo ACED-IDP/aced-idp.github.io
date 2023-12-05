@@ -10,6 +10,6 @@ This is the documentation for the [ACED-IDP Data Commons](https://aced-idp.org),
 
 ## Getting Started
 
-Please see the [Requirements](./requirements.md) page for instructions on how to installaing the required tools needed to create a project, add authorized users, and upload files with a manifest.
+Please see the [Getting Started](./getting-started.md) page for instructions on how to installing the required tools needed to create a project, add authorized users, and upload and download files..
 
-<a href="./requirements">![Main landing page for ACED IDP](./images/main-page.png)</a>
+<a href="./getting-started">![Main landing page for ACED IDP](./images/main-page.png)</a>

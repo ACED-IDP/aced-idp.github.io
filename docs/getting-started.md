@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-> Note: the tools listed here are under development and may be subject to change
+{% include '/note.md' %}
 
 Use case: As an analyst, in order to share data with collaborators, I need a way to create a project, upload files and associate those files with metadata. The system should be capable of adding files in an incremental manner.
 
@@ -21,23 +21,8 @@ For the ACED data commons, we have created a data dictionary based on the FHIR d
 > In a Gen3 Data Commons, programs and projects are two administrative nodes in the graph database that serve as the most upstream nodes. A program must be created first, followed by a project. Any subsequent data submission and data access, along with control of access to data, is done through the project scope.
 > [more](https://gen3.org/resources/operator/#6-programs-and-projects)
 
-For the following examples, we will use the `test` program, please use the `gen3_util projects ls` command to verify what programs you have access to.
-
-## Create a project in authorization system
-
-```sh
-export PROJECT_ID=test-myproject  # change this value to your program-project
-
-# request a new project
-gen3_util projects new
-
-# Note: before any project is created, the request must be approved.
-# A user with appropriate authority signs requests for the current project
-gen3_util access sign  # optionally, use the `--username nancy@example.com` to limit the approvals to a specific user
-```
+For the following examples, we will use the `aced` program with a project called `myproject`, please use the `gen3_util projects ls` command to verify what programs you have access to.
 
 ## Next steps
 
-At this point you should now be ready to dive further into the ACED-IDP ecosystem. We've outlined a few possible workflows in the following [Use Cases](./use-cases/index.md) section. If you are new to the ACED platform we recommend starting with the following use case:
-
-- [Analyzing data, generating metadata and publishing to the portal](./use-cases/use-case-1.md)
+- [Install gen3-client](gen3-client.md)
