@@ -22,11 +22,11 @@ To download a single file:
 1. Select the **File tab** and scroll down to the list of files
 2. Select the **Download ID** for the file of interest
 
-![File list](file-list.png)
+<a href="https://aced-idp.org/explorer">![File list](file-list.png)</a>
 
 3\. Select **Download** on the file page
 
-![Download single file](download-single-file.png)
+<a href="https://aced-idp.org/explorer">![Download single file](download-single-file.png)</a>
 
 ### gen3-client
 
@@ -50,7 +50,7 @@ To download multiple files:
 2. Optionally filter by project, data type, and format
 3. Select the **Download Manifest** button
 
-![File manifest](file-manifest.png)
+<a href="https://aced-idp.org/explorer">![File manifest](file-manifest.png)</a>
 
 4\. Download the files by passing the file manifest to the gen3-client:
 
