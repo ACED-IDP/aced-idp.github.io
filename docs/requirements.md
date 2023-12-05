@@ -16,7 +16,7 @@ title: Requirements
 
 ### 1. Installation Instructions
 
-A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.zip). Choose the file that matches your operating system (Windows, Linux, or macOS).
+A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases/latest/). Choose the file that matches your operating system (Windows, Linux, or macOS).
 
 No installation is necessary. Simply download the correct version for your operating system and unzip the archive. The program is then executed from the command-line by running the command gen3-client <options>. For more detailed instructions, see the section below for your operating system.
 
