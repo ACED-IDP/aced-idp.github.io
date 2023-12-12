@@ -31,6 +31,12 @@ This version should match the latest version on the [PyPi page](https://pypi.org
 pip install -U gen3_util
 ```
 
+### Configuration
+
+gen3_util uses the [gen3-client](https://gen3.org/resources/user/gen3-client/#2-configure-a-profile-with-credentials) configuration flow.
+After configuration, you can either specify the `--profile` option or set the `GEN3_UTIL_PROFILE=profile-name` environmental variable.
+
+
 ### Testing the configuration
 
 The command `gen3_util ping` will confirm that the access key and gen3-client have been configured correctly
@@ -38,7 +44,7 @@ The command `gen3_util ping` will confirm that the access key and gen3-client ha
 ```sh
 gen3_util ping
 
-# msg: Configuration OK, access key found, gen3-client found, gen3-client profile found 'aced'
+msg: 'Configuration OK: Connected using profile:production'
 # endpoint: https://aced-idp.org
 # username: someone@example.com
 ```
@@ -57,7 +63,7 @@ The following options and environmental variables are synonymous, you may set th
 | --patient_id            | PATIENT_ID            | meta data           |                                |
 | --specimen_id           | SPECIMEN_ID           | meta data           |                                |
 | --task_id               | TASK_ID               | meta data           |                                |
-| --profile               | GEN3_PROFILE          | gen3-client profile |                                |
+| --profile               | GEN3_UTIL_PROFILE     | gen3-client profile |                                |
 
 Alternatively, you can set the environmental variables using the `EXPORT` function:
 
@@ -72,7 +78,6 @@ The following parameters may be used to control system wide behavior:
 | GEN3_UTIL_CONFIG    | Path to config file.                 | None                     |
 | GEN3_UTIL_FORMAT    | Output format.                       | yaml                     |
 | GEN3_UTIL_STATE_DIR | Path for logs and state information. | ~/.gen3/gen3_util        |
-| GEN3_API_KEY        | location of credentials.json file.   | ~/.gen3/credentials.json |
 
 ## Next steps
 
