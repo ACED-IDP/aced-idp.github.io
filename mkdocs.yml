@@ -16,6 +16,7 @@ nav:
   - workflows/creating-project.md
   - workflows/upload.md
   - workflows/download.md
+  - workflows/metadata.md
 - Meta-Data:
     - data-model/introduction.md
     - data-model/integration.md

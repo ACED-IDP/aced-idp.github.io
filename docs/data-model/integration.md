@@ -24,7 +24,7 @@ The process of integrating your data into the graph involves several steps:
     * Normalize Data: Split the spreadsheet data into FHIR-compliant resources.
 
 * Step 4: Utilize provided FHIR Tooling or Libraries
-    * FHIR Tooling: Use gen3_utils [TODO]() and associated libraries to support support data conversion and validation.
+    * FHIR Tooling: Use gen3_utils [TODO]() and associated libraries to support data conversion and validation.
     * Validation: Use gen3_utils [TODO]() to validate the transformed data against FHIR specifications to ensure compliance and accuracy.
 
 * Step 5: Import into FHIR-Compatible System
@@ -108,3 +108,5 @@ By using identifiers in references, FHIR ensures that data can be accurately lin
 ### DocumentReference
 > A reference to a document of any kind for any purpose. [see](https://hl7.org/fhir/documentreference.html)
 
+
+See the  <a href="/workflows/metadata/">metadata workflow section</a> for more information on how to create and upload metadata.
