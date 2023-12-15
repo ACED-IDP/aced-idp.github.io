@@ -13,13 +13,35 @@ This page will guide you through both steps using the `gen3_util` tool.
 
 ## Creating and Uploading Manifest
 
-First, set the `PROJECT_ID` environmental variable to that of your program and project (e.g. `aced-myproject`):
+Think of a 'manifest' for file uploads as a detailed packing list for items being sent in a shipment. 
+It's like a comprehensive index or catalog that describes all the files being uploaded, providing essential information about each file in a structured format.
+For each file in the manifest, the following information is collected:
+
+* Identification and Details
+  * `file_name` - the relative full path name of the file [required]
+  * `size` - the size of the file in bytes [filled automatically]
+  * `md5` - the md5 checksum of the file [filled automatically]
+  * `object_id` - the object id of the file in indexd [system generated] 
+  * `mime_type` - the mime type of the file [filled automatically] 
+  * `remote_path` - the path to the file in when downloaded from the bucket [optional]
+  * meta-data - any identifiers that are associated with the file
+    * `project_id` - the project id of the file [required]
+    * `specimen_id` - the specimen id of the file [optional]
+    * `patient_id` - the patient id of the file [optional]
+    * `task_id` - the task id of the file [optional]
+    * `observation_id` - the observation id of the file [optional]
+
+
+
+A single manifest can exist for a project at any one time.
+
+Set the `PROJECT_ID` environmental variable to that of your program and project (e.g. `aced-myproject`):
 
 ```sh
 export PROJECT_ID=aced-myproject
 ```
 
-### Upload a Single File
+### Add a single file to the manifest
 
 To upload a single file to the manifest, run:
 
@@ -27,7 +49,7 @@ To upload a single file to the manifest, run:
 gen3_util files manifest put example-file.txt
 ```
 
-### Upload Multiple Files
+### Add multiple files to the manifest
 
 To upload multiple files to the manifest, use the `find` and `xargs` commands to send files the `gen3_util`. 
 
@@ -39,14 +61,20 @@ find example-directory -type f  | xargs -P 0 -I PATH gen3_util files manifest pu
 
 Note that we use `xargs` `-P 0` argument to run commands in parallel, greatly reducing the amount of time to add many files to a manifest.
 
-### Verify the Manifest
+### Verify the manifest
 
 ```sh
 gen3_util files manifest ls | grep file_name
 ```
-If incorrect, then delete the manifest `gen3_util files manifest rm` and then re-add all files using the `gen3_util files manifest put` command shown previously.
 
-### Upload the Manifest
+### Removing files from the manifest
+
+```sh
+gen3_util files manifest rm --object_id xxxx
+```
+
+
+### Upload the manifest
 
 ```sh
 gen3_util files manifest upload
@@ -54,38 +82,24 @@ gen3_util files manifest upload
 
 This command will upload all files defined in the newly create manifest to the S3 storage endpoints associated with the project.
 
-## Creating and Uploading Metadata
+By default, minimum metadata is created for each file, based on the project id and other identifiers.  You can override this behavior with the `--metadata` flag. 
 
-### Create Metadata
+```commandline
+gen3_util files manifest upload --help
+Usage: gen3_util files manifest upload [OPTIONS]
 
-Create basic, minimal metadata for the project:
+  Upload to index and project bucket.  Uses local manifest, or manifest_path.
 
-```sh
-gen3_util meta create /tmp/$PROJECT_ID
+Options:
+  --project_id TEXT             Gen3 program-project authorization
+  --restricted_project_id TEXT  Gen3 program-project, additional authorization
+  --upload-path TEXT            gen3-client upload path  [default: .]
+  --duplicate_check             Update files records  [default: False]
+  --manifest_path TEXT          Provide your own manifest file.
+  --meta_data                   Generate and submit metadata.  [default: True]
+  --wait                        Wait for metadata completion.  [default: False]
+
 ```
 
-### Optional: Edit the Metadata
+See the  <a href="/workflows/metadata/">metadata workflow section</a> for more information on how to create and upload metadata.
 
-```sh
-ls -1 /tmp/$PROJECT_ID
-DocumentReference.ndjson
-Observation.ndjson
-Patient.ndjson
-ResearchStudy.ndjson
-ResearchSubject.ndjson
-Specimen.ndjson
-Task.ndjson
-```
-
-### Publish the Metadata
-
-```text
-# copy the metadata to the bucket and publish the metadata to the portal
-gen3_util meta publish /tmp/$PROJECT_ID
-```
-
-## View the Files
-
-This final step uploads the metadata associated with the project and makes the files visible on the [Explorer page](https://aced-idp.org/explorer).
-
-<a href="https://aced-idp.org/explorer">![Gen3 File Explorer](./explorer.png)</a>
