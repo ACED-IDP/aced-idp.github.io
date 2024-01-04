@@ -25,4 +25,4 @@ For the following examples, we will use the `aced` program with a project called
 
 ## Next steps
 
-- [Install gen3-client](gen3-client.md)
+- [Install gen3-client](requirements/gen3-client.md)

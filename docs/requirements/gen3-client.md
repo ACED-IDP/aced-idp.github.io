@@ -5,14 +5,14 @@ title: gen3-client
 {% include '/note.md' %}
 
 !!! warning
-    It is important to use the `gen3-client` from the [ACED Github Release Page](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.zip), as it includes several updates from the "upstream" version including support for the `--bucket` flag as well as multipart uploads.
+    It is important to use the `gen3-client` from the [ACED Github Release Page](https://github.com/ACED-IDP/cdis-data-client/releases), as it includes several updates from the "upstream" version including support for the `--bucket` flag as well as multipart uploads.
 
 !!! note
     This page is adapted from the ['Download and Upload Files Using the Gen3-client'](https://gen3.org/resources/user/gen3-client/) page from the main [Gen3 website](https://gen3.org/). This site has a wealth of information that supplements the ACED-IDP project including in-depth examples and usages of the gen3-client.
 
 ## Downloading gen3-client
 
-A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.zip). Choose the file that matches your operating system (Windows, Linux, or macOS).
+A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases). Choose the file that matches your operating system (Windows, Linux, or macOS).
 
 No installation is necessary. Simply download the correct version for your operating system and unzip the archive. The program is then executed from the command-line by running the command gen3-client <options>. For more detailed instructions, see the section below for your operating system.
 
@@ -68,7 +68,7 @@ In such a case please reach out to the contributors for assistance.
 
 ## MacOS / Linux Installation Instructions
 
-1. Download the latest macOS ([Apple Silicon](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.zip) or [Intel](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos-intel.zip)) or [Linux](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-linux.zip) version of the gen3-client.
+1. Download the latest macOS (Apple Silicon or Intel) or Linux version of the gen3-client.
 2. Unzip the archive.
 3. Add the unzipped executable to a directory, for example: `~/.gen3/gen3-client`
 4. Open a terminal window.
@@ -81,7 +81,7 @@ In such a case please reach out to the contributors for assistance.
 
 ## Windows Installation Instructions
 
-1. Download the [Windows](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-windows.zip) version of the gen3-client.
+1. Download the Windows  version of the gen3-client.
 2. Unzip the archive.
 3. Add the unzipped executable to a directory, for example: `C:\Program Files\gen3-client\gen3-client.exe`
 4. Open the Start Menu and type "edit environment variables".
