@@ -41,43 +41,44 @@ Set the `PROJECT_ID` environmental variable to that of your program and project 
 export PROJECT_ID=aced-myproject
 ```
 
-### Add a single file to the manifest
+### Add a single file to the project
 
 To upload a single file to the manifest, run:
 
 ```sh
-gen3_util files manifest put example-file.txt
+gen3_util files add example-file.txt
 ```
 
-### Add multiple files to the manifest
+### Add multiple files to the project
 
 To upload multiple files to the manifest, use the `find` and `xargs` commands to send files the `gen3_util`. 
 
 For example, to add all files in the `example-directory/` directory, run:
 
 ```sh
-find example-directory -type f  | xargs -P 0 -I PATH gen3_util files manifest put PATH
+find example-directory -type f  | xargs -P 0 -I PATH gen3_util files add PATH
 ```
 
 Note that we use `xargs` `-P 0` argument to run commands in parallel, greatly reducing the amount of time to add many files to a manifest.
 
-### Verify the manifest
+### Verify the files were added to the project
 
 ```sh
-gen3_util files manifest ls | grep file_name
+gen3_util files status | grep file_name
 ```
 
-### Removing files from the manifest
+### Removing files from the project
 
 ```sh
-gen3_util files manifest rm --object_id xxxx
+gen3_util files rm --object_id xxxx
+# use the --local flag to remove the file from the local system's submission manifest only
 ```
 
 
-### Upload the manifest
+### Upload the project to the bucket and portal
 
 ```sh
-gen3_util files manifest upload
+gen3_util files push
 ```
 
 This command will upload all files defined in the newly create manifest to the S3 storage endpoints associated with the project.
