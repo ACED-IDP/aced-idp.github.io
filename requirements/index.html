@@ -1,0 +1,930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Requirements - ACED-IDP Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gen3-client" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACED-IDP Documentation" class="md-header__button md-logo" aria-label="ACED-IDP Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACED-IDP Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ACED-IDP/aced-idp.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ACED-IDP/aced-idp.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACED-IDP Documentation" class="md-nav__button md-logo" aria-label="ACED-IDP Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ACED-IDP Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ACED-IDP/aced-idp.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ACED-IDP/aced-idp.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to the ACED-IDP Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gen3-client/" class="md-nav__link">
+        gen3-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gen3_util/" class="md-nav__link">
+        gen3_util
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Use Cases & Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Use Cases & Workflows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/creating-project/" class="md-nav__link">
+        Creating a Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/upload/" class="md-nav__link">
+        Upload Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/download/" class="md-nav__link">
+        Download Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/metadata/" class="md-nav__link">
+        Creating and Uploading Metadata
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Meta-Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Meta-Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/introduction/" class="md-nav__link">
+        FHIR for Research Analysts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-model/integration/" class="md-nav__link">
+        Integrating your data
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://aced-idp.github.io/status-monitor" class="md-nav__link">
+        Status Monitor ↗
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gen3-client" class="md-nav__link">
+    gen3-client
+  </a>
+  
+    <nav class="md-nav" aria-label="gen3-client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-installation-instructions" class="md-nav__link">
+    1. Installation Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum-verification" class="md-nav__link">
+    Checksum Verification
+  </a>
+  
+    <nav class="md-nav" aria-label="Checksum Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos-linux-installation-instructions" class="md-nav__link">
+    MacOS / Linux Installation Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-installation-instructions" class="md-nav__link">
+    Windows Installation Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-help-menu" class="md-nav__link">
+    View the Help Menu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-a-profile-with-credentials" class="md-nav__link">
+    2. Configure a Profile with Credentials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gen3_util" class="md-nav__link">
+    gen3_util
+  </a>
+  
+    <nav class="md-nav" aria-label="gen3_util">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-configuration" class="md-nav__link">
+    Testing the configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Requirements</h1>
+
+<blockquote>
+<p>Note: the tools listed here are under development and may be subject to change</p>
+</blockquote>
+<ul>
+<li>
+<p>A Python installation with version 3.10 or later</p>
+</li>
+<li>
+<p>A configured <code>gen3-client</code> for file uploads and downloads. See the the "<a href="#gen3-client">gen3-client</a>" section below for download links specific to your operating system.</p>
+</li>
+<li>
+<p>A configured <code>gen3_util</code> installation for project management. See the "<a href="#gen3_util">gen3_util</a>" section for steps on installing this tool.</p>
+</li>
+</ul>
+<h2 id="gen3-client">gen3-client<a class="headerlink" href="#gen3-client" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>This section is adapted from the <a href="https://gen3.org/resources/user/gen3-client/">'Download and Upload Files Using the Gen3-client'</a> page from the main <a href="https://gen3.org/">Gen3 website</a>. This site has a wealth of information that supplements the ACED-IDP project including in-depth examples and usages of the gen3-client. </p>
+</blockquote>
+<h3 id="1-installation-instructions">1. Installation Instructions<a class="headerlink" href="#1-installation-instructions" title="Permanent link">&para;</a></h3>
+<p>A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the <a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/">Release page on Github</a>. Choose the file that matches your operating system (Windows, Linux, or macOS).</p>
+<p>No installation is necessary. Simply download the correct version for your operating system and unzip the archive. The program is then executed from the command-line by running the command gen3-client <options>. For more detailed instructions, see the section below for your operating system.</p>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Gen3 Client</th>
+<th>Checksum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS (Apple Silicon)</td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.zip">gen3-client-macos.zip</a></td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/checksums.txt">checksums.txt</a></td>
+</tr>
+<tr>
+<td>macOS (Intel)</td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos-intel.zip">gen3-client-macos-intel.zip</a></td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/checksums.txt">checksums.txt</a></td>
+</tr>
+<tr>
+<td>Linux (amd64)</td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-linux.zip">gen3-client-linux.zip</a></td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/checksums.txt">checksums.txt</a></td>
+</tr>
+<tr>
+<td>Windows (amd64)</td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-windows.zip">gen3-client-windows.zip</a></td>
+<td><a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/checksums.txt">checksums.txt</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: Do not try to run the program by double-clicking on it. Instead, execute the program from within the shell / terminal / command prompt. The program does not provide a graphical user interface (GUI) at this time; so, commands are sent by typing them into the terminal.</p>
+</blockquote>
+<h3 id="checksum-verification">Checksum Verification<a class="headerlink" href="#checksum-verification" title="Permanent link">&para;</a></h3>
+<p>In order to verify that the downloaded file can be trusted checksums are provided in <a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/checksums.txt"><code>checksums.txt</code></a>. See below for examples of how to use this file.</p>
+<details>
+<summary>Successful Verification</summary>
+
+To verify the integrity of the binaries on macOS run the following command in the same directory as the downloaded file:
+
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>shasum<span class="w"> </span>-c<span class="w"> </span>checksums.txt<span class="w"> </span>--ignore-missing
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>gen3-client-macos.zip:<span class="w"> </span>OK
+</span></code></pre></div>
+
+If the `shasum` command outputs `OK` than the verification was successful and the executable can be trusted.
+
+</details>
+
+<details>
+<summary>Unsuccessful Verification</summary>
+
+Alternatively if the command outputs `FAILED` than the checksum did not match and the binary should not be run.
+
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>shasum<span class="w"> </span>-c<span class="w"> </span>checksums.txt<span class="w"> </span>--ignore-missing
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>gen3-client-macos.zip:<span class="w"> </span>FAILED
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>shasum:<span class="w"> </span>WARNING:<span class="w"> </span><span class="m">1</span><span class="w"> </span>computed<span class="w"> </span>checksum<span class="w"> </span>did<span class="w"> </span>NOT<span class="w"> </span>match
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>shasum:<span class="w"> </span>checksums.txt:<span class="w"> </span>no<span class="w"> </span>file<span class="w"> </span>was<span class="w"> </span>verified
+</span></code></pre></div>
+
+In such a case please reach out to the contributors for assistance.
+
+</details>
+
+<h4 id="macos-linux-installation-instructions">MacOS / Linux Installation Instructions<a class="headerlink" href="#macos-linux-installation-instructions" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Download the latest macOS (<a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.zip">Apple Silicon</a> or <a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos-intel.zip">Intel</a>) or <a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-linux.zip">Linux</a> version of the gen3-client.</li>
+<li>Unzip the archive.</li>
+<li>Add the unzipped executable to a directory, for example: <code>~/.gen3/gen3-client</code></li>
+<li>Open a terminal window.</li>
+<li>Add the directory containing the executable to your Path environment variable by entering this command in the terminal: <code>echo 'export PATH=$PATH:~/.gen3' &gt;&gt; ~/.bash_profile</code></li>
+<li>Run <code>source ~/.bash_profile</code> or restart your terminal.</li>
+<li>Now you can execute the program by opening a terminal window and entering the command <code>gen3-client</code></li>
+</ol>
+<blockquote>
+<p>Note: If your macOS does not allow access, you need to manually allow it under System Preferences &gt; Security &amp; Privacy &gt; General (click the lock icon to unlock, enter administrator name and password).</p>
+</blockquote>
+<h4 id="windows-installation-instructions">Windows Installation Instructions<a class="headerlink" href="#windows-installation-instructions" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Download the <a href="https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-windows.zip">Windows</a> version of the gen3-client.</li>
+<li>Unzip the archive.</li>
+<li>Add the unzipped executable to a directory, for example: <code>C:\Program Files\gen3-client\gen3-client.exe</code></li>
+<li>Open the Start Menu and type "edit environment variables".</li>
+<li>Open the option "Edit the system environment variables".</li>
+<li>In the "System Properties" window that opens up, on the "Advanced" tab, click on the "Environment Variables" button.</li>
+<li>In the box labeled "System Variables", find the "Path" variable and click "Edit".</li>
+<li>In the window that pops up, click "New".</li>
+<li>Type in the full directory path of the executable file, for example: <code>C:\Program Files\gen3-client</code></li>
+<li>Click "Ok" on all the open windows and restart the command prompt if it is already open by entering cmd into the start menu and hitting enter.</li>
+</ol>
+<h4 id="view-the-help-menu">View the Help Menu<a class="headerlink" href="#view-the-help-menu" title="Permanent link">&para;</a></h4>
+<p>To check that your copy of the client is working and confirm the version, the tool can be run on the command-line in your terminal or command prompt by entering <code>gen3-client</code>. Typing this alone or <code>gen3-client help</code> will display the help menu. For help on a particular command, enter: <code>gen3-client &lt;command&gt; help</code>. Note that you must provide the full path of the tool in order for the commands to run, for example, <code>./gen3-client</code> while working from the directory containing the client. Alternatively, you can add the location of the gen3-client executable to your shell’s PATH environment variable.</p>
+<h3 id="2-configure-a-profile-with-credentials">2. Configure a Profile with Credentials<a class="headerlink" href="#2-configure-a-profile-with-credentials" title="Permanent link">&para;</a></h3>
+<p>Before using the gen3-client to upload or download data, the gen3-client needs to be configured with API credentials downloaded from the user’s data commons Profile:</p>
+<ul>
+<li>
+<p>Credentials: <code>~/.gen3/credentials.json</code> <a href="https://gen3.org/resources/user/using-api/#credentials-to-send-api-requests">identity file</a> from the <a href="https://aced-idp.org/identity">portal</a></p>
+</li>
+<li>
+<p>Download the access key from the portal and save it in the standard location <code>~/.gen3/credentials.json</code></p>
+</li>
+</ul>
+<p><img alt="Gen3 Credentials" src="https://gen3.org/resources/user/using-api/API_key_profile_page.png" /></p>
+<ol>
+<li>From the command-line, run the gen3-client configure command with the <code>--cred</code>, <code>--apiendpoint</code>, and <code>--profile</code> flags (see examples below).</li>
+</ol>
+<p>Example Usage:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gen3-client<span class="w"> </span>configure<span class="w"> </span>--profile<span class="o">=</span>&lt;profile_name&gt;<span class="w"> </span>--cred<span class="o">=</span>&lt;credentials.json&gt;<span class="w"> </span>--apiendpoint<span class="o">=</span>https://aced-idp.org
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Mac/Linux:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>gen3-client<span class="w"> </span>configure<span class="w"> </span>--profile<span class="o">=</span>demo<span class="w"> </span>--cred<span class="o">=</span>~/Downloads/demo-credentials.json<span class="w"> </span>--apiendpoint<span class="o">=</span>https://aced-idp.org
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># Windows:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>gen3-client<span class="w"> </span>configure<span class="w"> </span>--profile<span class="o">=</span>demo<span class="w"> </span>--cred<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\d</span>emo<span class="se">\D</span>ownloads<span class="se">\d</span>emo-credentials.json<span class="w"> </span>--apiendpoint<span class="o">=</span>https://aced-idp.org
+</span></code></pre></div>
+<p>When successfully executed, this will create a configuration file, which contains all the API keys and URLs associated with each commons profile configured, located in the user folder:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Mac/Linux:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/Users/demo/.gen3/gen3_client_config.ini
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Windows: </span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>C:<span class="se">\U</span>sers<span class="se">\d</span>emo<span class="se">\.</span>gen3<span class="se">\g</span>en3_client_config.ini
+</span></code></pre></div>
+<blockquote>
+<p><strong>NOTE</strong>: These keys must be treated like important passwords; never share the contents of the credentials.json and gen3-client gen3_client_config.ini or config file!</p>
+</blockquote>
+<p>To confirm you successfully configured a profile with the correct authorization privileges, you can run the gen3-client auth command, which should list your access privileges for each project in the commons you have access to. For example:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>~&gt;<span class="w"> </span>gen3-client<span class="w"> </span>auth<span class="w"> </span>--profile<span class="o">=</span>demo
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="m">2019</span>/11/19<span class="w"> </span><span class="m">11</span>:59:04
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>You<span class="w"> </span>have<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>project<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>https://aced-idp.org:
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="m">2019</span>/11/19<span class="w"> </span><span class="m">11</span>:59:04<span class="w"> </span>CPTAC<span class="w"> </span><span class="o">[</span><span class="nb">read</span><span class="w"> </span>read-storage<span class="o">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="m">2019</span>/11/19<span class="w"> </span><span class="m">11</span>:59:04<span class="w"> </span>DCF<span class="w"> </span><span class="o">[</span>create<span class="w"> </span>delete<span class="w"> </span><span class="nb">read</span><span class="w"> </span>read-storage<span class="w"> </span>update<span class="w"> </span>upload<span class="w"> </span>write-storage<span class="o">]</span>
+</span></code></pre></div>
+<h2 id="gen3_util">gen3_util<a class="headerlink" href="#gen3_util" title="Permanent link">&para;</a></h2>
+<p>The <code>gen3_util</code> tool requires a working <a href="https://www.python.org/downloads/">Python 3</a> installation no older than Python 3.10. Run the following in your working directory to install the latest version of gen3_util from the Python Package Index: </p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Optionally create a virtual environment</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>gen3_util
+</span></code></pre></div>
+<p>You can verify the installation was successful by then running the <code>gen3_util</code> command with the expected output being the latest version:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>gen3_util
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>msg:<span class="w"> </span>Version<span class="w"> </span><span class="m">0</span>.0.8
+</span></code></pre></div>
+<h3 id="testing-the-configuration">Testing the configuration<a class="headerlink" href="#testing-the-configuration" title="Permanent link">&para;</a></h3>
+<p>The command <code>gen3_util ping</code> will confirm that the access key and gen3-client have been configured correctly</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>gen3_util<span class="w"> </span>ping
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>msg:<span class="w"> </span>Configuration<span class="w"> </span>OK,<span class="w"> </span>access<span class="w"> </span>key<span class="w"> </span>found,<span class="w"> </span>gen3-client<span class="w"> </span>found,<span class="w"> </span>gen3-client<span class="w"> </span>profile<span class="w"> </span>found<span class="w"> </span><span class="s1">&#39;aced&#39;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>endpoint:<span class="w"> </span>https://aced-idp.org
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>username:<span class="w"> </span>me@myinstitution.edu
+</span></code></pre></div>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p><code>gen3_util  [OPTIONS] COMMAND [ARGS]...</code></p>
+<p>The following options and environmental variables are synonymous, you may set them as environmental variables or pass them as parameters to the command line.</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>environment</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--restricted_project_id</td>
+<td>RESTRICTED_PROJECT_ID</td>
+<td>authorization</td>
+</tr>
+<tr>
+<td>--project_id</td>
+<td>PROJECT_ID</td>
+<td>authorization</td>
+</tr>
+<tr>
+<td>--observation_id</td>
+<td>OBSERVATION_ID</td>
+<td>meta data</td>
+</tr>
+<tr>
+<td>--patient_id</td>
+<td>PATIENT_ID</td>
+<td>meta data</td>
+</tr>
+<tr>
+<td>--specimen_id</td>
+<td>SPECIMEN_ID</td>
+<td>meta data</td>
+</tr>
+<tr>
+<td>--task_id</td>
+<td>TASK_ID</td>
+<td>meta data</td>
+</tr>
+<tr>
+<td>--profile</td>
+<td>GEN3_PROFILE</td>
+<td>gen3-client profile</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.</p>
+<div class="language-text highlight"><pre><span></span><code>`--observation_id observation-1` or `export OBSERVATION_ID=observation-1`
+</code></pre></div>
+<p>The following parameters may be used to control system wide behavior:</p>
+<table>
+<thead>
+<tr>
+<th>environment</th>
+<th>comment</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GEN3_UTIL_CONFIG</td>
+<td>Path to config file.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>GEN3_UTIL_FORMAT</td>
+<td>Output format.</td>
+<td>yaml</td>
+</tr>
+<tr>
+<td>GEN3_UTIL_STATE_DIR</td>
+<td>Path for logs and state information.</td>
+<td>~/.gen3/gen3_util</td>
+</tr>
+<tr>
+<td>GEN3_API_KEY</td>
+<td>location of credentials.json file.</td>
+<td>~/.gen3/credentials.json</td>
+</tr>
+</tbody>
+</table>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>With all the dependencies in place you should now be ready to move on to using the <code>gen3_util</code> to create and manage your projects. See the <a href="../getting-started/">Getting Started</a> page for steps on how to do so.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.indexes", "navigation.footer"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
