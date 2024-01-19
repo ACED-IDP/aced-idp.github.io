@@ -145,4 +145,4 @@ gen3-client auth --profile=aced
 
 ## Next steps
 
-- [Install gen3_util](gen3_util.md)
+- [Install the gen3 tracker](gen3-tracker.md)
