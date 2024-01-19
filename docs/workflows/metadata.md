@@ -1,81 +1,61 @@
-# Creating and Uploading Metadata
+# Adding metadata
 
-### Create Metadata
 
-Create basic, minimal metadata for the project:
+### `META` directory
+
+The convention of using a `META` directory for supporting files a common practice in data management. This directory is used to organize and store the metadata files of your project that describe the Study, Subjects, Specimens, Documents, etc. . Here's a brief explanation of this convention:
+
+* Separation of concerns: The `META` directory provides a clear separation between your metadata and other project files. This helps maintain a clean and organized project structure.
+* Clarity and Readability: By placing metadata files in a dedicated directory, it becomes easier for researchers (including yourself and others) to locate and understand the main codebase. This improves overall project clarity and readability.
+* Build Tools Integration: Many build tools and development environments are configured by default to recognize the `META` directory as the main metadata location. This convention simplifies the configuration process and ensures that tools can easily identify and analyze your data files.
+* Consistency Across Projects: Adopting a common convention, such as using `META` for metadata files, promotes consistency across different projects. When researchers work on multiple projects, having a consistent structure makes it easier to navigate and understand each study.
+* The 'META' directory will contain files FHIR resource name with the extension [.ndjson](https://www.hl7.org/fhir/nd-json.html). e.g. `ResearchStudy.ndjson`  
+
+
+
+### Create metadata files
+
+Every file uploaded to the project must have accompanying metadata in the form of FHIR resources.  The metadata is stored in the `META` directory.  
+* The minimum required metadata for a study is the `ResearchStudy` resource.
+* The minimum required metadata for a file is the `DocumentReference` resource.
+
+Additional resources can be added to the metadata files:
+* subjects (ResearchSubject, Patient)
+* specimens (Specimen)
+* assays (Task, DiagnosticReport)
+* measurements (Observation)
+
+As a convenience, the `g3t utilities meta create` command will create a minimal metadata for each file in the project.
+
+* This command will create a skeleton metadata file for each file added to the project using the `_id` parameters specified on the `g3t add` command.  
+* You can edit the metadata to map additional fields.
+* The metadata files can be created at any time, but the system will validate them before the changes are committed.
+
+
+```shell
+g3t utilities meta create --help
+Usage: g3t utilities meta create [OPTIONS] [METADATA_PATH]
+
+  Create minimal study metadata from uploaded files.
+
+  METADATA_PATH: directory containing metadata files to be updated. [default: ./META]
+
+Options:
+  --overwrite                 Ignore existing records.  [default: False]
+  --source [manifest|indexd]  Query manifest or indexd.  [default: manifest]
+
+```
+
+When the project is committed, the system will validate new or changed records.  You may validate the metadata on demand by:
 
 ```sh
-gen3_util meta create /tmp/$PROJECT_ID
-# use the --source option to local or remote source data
+$ g3t utilities meta validate --help
+Usage: g3t meta validate [OPTIONS] DIRECTORY
 
-ls -1 /tmp/$PROJECT_ID
-DocumentReference.ndjson
-Observation.ndjson
-Patient.ndjson
-ResearchStudy.ndjson
-ResearchSubject.ndjson
-Specimen.ndjson
-Task.ndjson
-```
-
-### Retrieve existing metadata
-Retrieve the existing metadata from the portal.
-
-```sh
-
-gen3_util meta pull /tmp/$PROJECT_ID
-
-ls -1 /tmp/$PROJECT_ID
-DocumentReference.ndjson
-Patient.ndjson
-ResearchStudy.ndjson
-ResearchSubject.ndjson
-Specimen.ndjson
+  Validate FHIR data in DIRECTORY.
 
 ```
 
-### Integrate your data
+See the  <a href="/workflows/tabular/">tabular metadata section</a> for more information on working with metadata.
+See the  <a href="/workflows/commit-push/">commit and push section</a> for more information on publishing.
 
-In your data processing pipeline, flexibility in choosing tools is essential for efficient analysis and interpretation. As bioinformaticians, you're encouraged to use the tools you're most comfortable and proficient with for data manipulation. However, it's important to note that while working with data, all submissions must adhere to the Fast Healthcare Interoperability Resources (FHIR) standards. 
-
-#### Tabular Data Utilities
-
-Currently, the following utilities are undergoing construction and enhancement to optimize their functionalities and performance: 
-
-Convert the FHIR data to tabular form.
-This is a local operation that does not require access to the portal.  It uses data downloaded from the portal in the previous step.
-
-```sh
-gen3_util meta to_tabular  /tmp/$PROJECT_ID  /tmp/$PROJECT_ID/tabular
-
-```
-
-Convert the tabular data to FHIR.
-This is a local operation that does not require access to the portal. p.
-
-```sh
-gen3_util meta from_tabular  /tmp/$PROJECT_ID  /tmp/$PROJECT_ID/tabular
-
-```
-
-#### Validate the data
-
-```sh
-gen3_util meta validate   /tmp/$PROJECT_ID  
-
-```
-
-
-
-### Publish the Metadata
-
-```text
-# copy the metadata to the bucket and publish the metadata to the portal
-gen3_util meta publish /tmp/$PROJECT_ID
-```
-
-## View the Files
-
-This final step uploads the metadata associated with the project and makes the files visible on the [Explorer page](https://aced-idp.org/explorer).
-
-<a href="https://aced-idp.org/explorer">![Gen3 File Explorer](./explorer.png)</a>

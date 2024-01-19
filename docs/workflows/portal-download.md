@@ -1,5 +1,5 @@
 ---
-title: Download Files
+title: Download
 ---
 
 {% include '/note.md' %}

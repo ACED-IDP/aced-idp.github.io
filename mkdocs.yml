@@ -11,12 +11,19 @@ nav:
 - getting-started.md
 - Requirements:
   - requirements/gen3-client.md
-  - requirements/gen3_util.md
+  - requirements/gen3-tracker.md
 - Use Cases & Workflows:
   - workflows/creating-project.md
   - workflows/upload.md
-  - workflows/download.md
   - workflows/metadata.md
+  - workflows/commit-push.md
+  - workflows/clone.md
+  - Portal:
+    - workflows/portal-explore.md
+    - workflows/portal-download.md
+  - Utilities:
+    - workflows/approve-requests.md
+    - workflows/add-users.md
 - Meta-Data:
     - data-model/introduction.md
     - data-model/integration.md

@@ -4,42 +4,54 @@ title: Creating a Project
 
 {% include '/note.md' %}
 
-## Create a project in authorization system
+## Create a project locally and remotely
 
-```sh
-export PROJECT_ID=aced-myproject  # change this value to your program-project
 
-# request a new project
-gen3_util projects new
+The g3t init command is used to initialize a new repository in a directory. When you run this command, g3t creates a new subdirectory within the existing directory that houses the internal data structure required for version control. Here's a brief explanation of what happens when you use g3t init:
 
-# Note: before any project is created, the request must be approved.
-# A user with appropriate authority signs requests for the current project
-gen3_util access sign  # optionally, use the `--username nancy@example.com` to limit the approvals to a specific user
+Initialization: Running g3t init initializes a new Git repository in the current directory. It doesn't affect your existing files; instead, it adds:
+
+* a hidden subfolder `.g3t` within your project that houses the internal data structure required for version control.
+* a visible subfolder `META` within your project that houses the FHIR metadata files. 
+
+Existing Files: If you run g3t init in a directory that already contains files, g3t will not overwrite them. 
+
+```
+g3t init --help
+Usage: g3t init [OPTIONS]
+
+  Create project, both locally and on remote.
+
+Options:
+  --project_id TEXT  Gen3 program-project G3T_PROJECT_ID
+
 ```
 
-## Optional: Granting user access to a project
+Note the program-project is significant.  It is used to determine the location of the remote repository, bucket storage and access control.  Contact support for more on supported program and project names.
 
-Once a project has been created you will have full access to it. There are two ways to add additional users to the project:
+While you can work with an initialized repository locally, **an authorized user will need to sign** the project request before you can push to the remote repository. See `g3t utilities access sign`
 
-### 1. Read and Write Access
+## Directory structure
+```
+.
+├── .g3t                                  // local directory for commits, etc.
+│   ├── config.yaml
+│   └── state
+├── META                                  // convention for FHIR metadata
+│   ├── DocumentReference.ndjson
+│   ├── Patient.ndjson
+│   ├── ResearchStudy.ndjson
+│   └── ResearchSubject.ndjson
+└── <your data here>                      // your research files
+    └── ...
 
-To give another user full access to the project, run the following:
-
-```sh
-gen3_util users add --username someone@example.com --write --project_id aced-myproject
 ```
 
-### 2.  Read Only Access
 
-Alternatively, to give another user read access only (without the ability to upload to the project), run the following:
-
-```sh
-gen3_util users add --username someone@example.com --project_id aced-myproject
-```
 
 ## Next steps
 
 At this point you should now be ready to dive further into the ACED-IDP ecosystem with the following guides:
 
+- [Adding users to a project](./add-users.md)
 - [Uploading data to a project](./upload.md)
-- [Downloading data from a project](./download.md)

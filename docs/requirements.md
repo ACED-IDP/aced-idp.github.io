@@ -8,7 +8,7 @@ title: Requirements
 
 - A configured `gen3-client` for file uploads and downloads. See the the "[gen3-client](#gen3-client)" section below for download links specific to your operating system.
 
-- A configured `gen3_util` installation for project management. See the "[gen3_util](#gen3_util)" section for steps on installing this tool.
+- A configured `g3t` a "gen3 tracker" installation for project management. See the "[g3t](#g3t)" section for steps on installing this tool.
 
 ## gen3-client
 
@@ -146,65 +146,57 @@ You have access to the following project(s) at https://aced-idp.org:
 2019/11/19 11:59:04 DCF [create delete read read-storage update upload write-storage]
 ```
 
-## gen3_util
+## g3t Gen3 Tracker
 
-The `gen3_util` tool requires a working [Python 3](https://www.python.org/downloads/) installation no older than Python 3.10. Run the following in your working directory to install the latest version of gen3_util from the Python Package Index: 
+The `g3t` tool requires a working [Python 3](https://www.python.org/downloads/) installation no older than Python 3.10. Run the following in your working directory to install the latest version of g3t from the Python Package Index: 
 
 ```sh
 # Optionally create a virtual environment
 $ python3 -m venv venv ; source venv/bin/activate
 
-$ pip install gen3_util
+$ pip install g3t
 ```
 
-You can verify the installation was successful by then running the `gen3_util` command with the expected output being the latest version:
+You can verify the installation was successful by then running the `g3t` command with the expected output being the latest version:
 
 ```sh
-$ gen3_util
-msg: Version 0.0.8
+$ g3t
+version: 0.0.14rc4
 ```
 
 ### Testing the configuration
 
-The command `gen3_util ping` will confirm that the access key and gen3-client have been configured correctly
+The command `g3t ping` will confirm that the access key and gen3-client have been configured correctly
 
 ```sh
-$ gen3_util ping
-msg: Configuration OK, access key found, gen3-client found, gen3-client profile found 'aced'
+$ g3t ping
+msg: Configuration OK: Connected using profile:local
 endpoint: https://aced-idp.org
 username: me@myinstitution.edu
 ```
 
 ### Usage
 
-`gen3_util  [OPTIONS] COMMAND [ARGS]...`
+`g3t  [OPTIONS] COMMAND [ARGS]...`
 
 The following options and environmental variables are synonymous, you may set them as environmental variables or pass them as parameters to the command line.
 
 | option                  | environment           | comment             |
-| ----------------------- | --------------------- | ------------------- |
-| --restricted_project_id | RESTRICTED_PROJECT_ID | authorization       |
-| --project_id            | PROJECT_ID            | authorization       |
-| --observation_id        | OBSERVATION_ID        | meta data           |
-| --patient_id            | PATIENT_ID            | meta data           |
-| --specimen_id           | SPECIMEN_ID           | meta data           |
-| --task_id               | TASK_ID               | meta data           |
-| --profile               | GEN3_PROFILE          | gen3-client profile |
+| ----------------------- |-----------------------| ------------------- |
+| --project_id            | G3T_PROJECT_ID        | authorization       |
+| --profile               | G3T_PROFILE           | gen3-client profile |
 
 e.g.
 
-    `--observation_id observation-1` or `export OBSERVATION_ID=observation-1`
+    `--project_id test-my_project` or `export G3T_PROJECT_ID=test-my_project`
 
 The following parameters may be used to control system wide behavior:
 
-| environment         | comment                              | default                  |
-| ------------------- | ------------------------------------ | ------------------------ |
-| GEN3_UTIL_CONFIG    | Path to config file.                 | None                     |
-| GEN3_UTIL_FORMAT    | Output format.                       | yaml                     |
-| GEN3_UTIL_STATE_DIR | Path for logs and state information. | ~/.gen3/gen3_util        |
-| GEN3_API_KEY        | location of credentials.json file.   | ~/.gen3/credentials.json |
+| environment  | comment                              | default                  |
+|--------------| ------------------------------------ | ------------------------ |
+| G3T_FORMAT   | Output format.                       | yaml                     |
 
 
 ## Next steps
 
-With all the dependencies in place you should now be ready to move on to using the `gen3_util` to create and manage your projects. See the [Getting Started](./getting-started.md) page for steps on how to do so.
+With all the dependencies in place you should now be ready to move on to using the `g3t` to create and manage your projects. See the [Getting Started](./getting-started.md) page for steps on how to do so.
