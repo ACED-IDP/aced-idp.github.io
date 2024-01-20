@@ -16,10 +16,12 @@ The convention of using a `META` directory for supporting files a common practic
 ### Create metadata files
 
 Every file uploaded to the project must have accompanying metadata in the form of FHIR resources.  The metadata is stored in the `META` directory.  
+
 * The minimum required metadata for a study is the `ResearchStudy` resource.
 * The minimum required metadata for a file is the `DocumentReference` resource.
 
 Additional resources can be added to the metadata files:
+
 * subjects (ResearchSubject, Patient)
 * specimens (Specimen)
 * assays (Task, DiagnosticReport)
@@ -31,20 +33,15 @@ As a convenience, the `g3t utilities meta create` command will create a minimal 
 * You can edit the metadata to map additional fields.
 * The metadata files can be created at any time, but the system will validate them before the changes are committed.
 
+e.g. The `g3t utilities meta create` will use the metadata identifiers specified on the `g3t add` command:
 
-```shell
-g3t utilities meta create --help
-Usage: g3t utilities meta create [OPTIONS] [METADATA_PATH]
-
-  Create minimal study metadata from uploaded files.
-
-  METADATA_PATH: directory containing metadata files to be updated. [default: ./META]
-
-Options:
-  --overwrite                 Ignore existing records.  [default: False]
-  --source [manifest|indexd]  Query manifest or indexd.  [default: manifest]
-
+```sh
+g3t add myfile.cram  --patient_id P0 --specimen_id P0-BoneMarrow --task_id P0-Sequencing
+g3t utilities meta create 
 ```
+Will produce metadata with these relationships:
+
+<img src="/images/create-meta-graph.png" width="100%">
 
 When the project is committed, the system will validate new or changed records.  You may validate the metadata on demand by:
 
@@ -56,6 +53,6 @@ Usage: g3t meta validate [OPTIONS] DIRECTORY
 
 ```
 
-See the  <a href="/workflows/tabular/">tabular metadata section</a> for more information on working with metadata.
-See the  <a href="/workflows/commit-push/">commit and push section</a> for more information on publishing.
+* See the  <a href="/workflows/tabular/">tabular metadata section</a> for more information on working with metadata.
+* See the  <a href="/workflows/commit-push/">commit and push section</a> for more information on publishing.
 
