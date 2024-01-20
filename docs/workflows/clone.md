@@ -24,4 +24,4 @@ Options:
 
 ## Next steps
 
-- [Downloading data from a project](./download.md)
+- [Downloading data from a project](./portal-download.md)

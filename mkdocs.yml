@@ -14,19 +14,25 @@ nav:
   - requirements/gen3-tracker.md
 - Use Cases & Workflows:
   - workflows/creating-project.md
-  - workflows/upload.md
-  - workflows/metadata.md
-  - workflows/commit-push.md
-  - workflows/clone.md
-  - Portal:
+  - Submitting Data:
+    - workflows/upload.md
+    - Meta-Data:
+        - data-model/introduction.md
+        - workflows/metadata.md
+        - data-model/integration.md
+    - workflows/status.md
+    - workflows/commit-push.md
+  - Consuming Data:
+    - workflows/clone.md
+  - Exploring Data:
     - workflows/portal-explore.md
     - workflows/portal-download.md
   - Utilities:
     - workflows/approve-requests.md
     - workflows/add-users.md
-- Meta-Data:
-    - data-model/introduction.md
-    - data-model/integration.md
+  - Experimental Features:
+    - workflows/tabular.md
+    - workflows/restrict-access.md
 - Status Monitor ↗: https://aced-idp.github.io/status-monitor
 
 plugins:

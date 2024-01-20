@@ -70,4 +70,4 @@ export G3T_PROJECT_ID=aced-myproject
 
 ## Next steps
 
-- [Create a Project](/workflows/creating-project)
+- [Create a Project](../workflows/creating-project.md)

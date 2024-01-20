@@ -39,7 +39,7 @@ Options:
 
 If you have an existing project that you want to migrate using g3t, you can do so by following these steps:
 
-* Create a new repository using `g3t init`. See [Creating a project](/workflows/creating-project/)
+* Create a new repository using `g3t init`. See [Creating a project](creating-project.md)
 * Either move or copy your existing data files into the new repository.  Alternatively, symbolic links are supported.
 
 
