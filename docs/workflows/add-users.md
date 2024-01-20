@@ -27,4 +27,4 @@ g3t utilities users add --username someone@example.com --project_id aced-myproje
 At this point you should now be ready to dive further into the ACED-IDP ecosystem with the following guides:
 
 - [Uploading data to a project](./upload.md)
-- [Downloading data from a project](./download.md)
+- [Downloading data from a project](./portal-download.md)

@@ -24,12 +24,12 @@ The process of integrating your data into the graph involves several steps:
     * Normalize Data: Split the spreadsheet data into FHIR-compliant resources.
 
 * Step 4: Utilize provided FHIR Tooling or Libraries
-    * FHIR Tooling: Use g3ts [TODO]() and associated libraries to support data conversion and validation.
-    * Validation: Use g3ts [TODO]() to validate the transformed data against FHIR specifications to ensure compliance and accuracy.
+    * FHIR Tooling: Use `g3t utilities meta to_tabular, from_tabular ` and associated libraries to support data conversion and validation.
+    * Validation: Use `g3t utilities meta validate` to validate the transformed data against FHIR specifications to ensure compliance and accuracy.
 
 * Step 5: Import into FHIR-Compatible System
-    * Load Data: Use g3ts [TODO]() to load the transformed data into the aced system.
-    * Testing and Verification: Use g3ts [TODO]() to ensure your data appears correctly in the portal and analysis tools.
+    * Load Data: Use `g3t commit` to load the transformed data into the aced system.
+    * Testing and Verification: Use `g3t push` to ensure your data appears correctly in the portal and analysis tools.
 
 * Step 6: Iterate and Refine
     * Review and Refine: Check for any discrepancies or issues during the import process. Refine the conversion process as needed.

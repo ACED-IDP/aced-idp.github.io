@@ -1,6 +1,6 @@
 # Status
 
-## Viewing the Changes to be committed
+## Show the working tree status
 
 The `g3t status` command is used to view the commit history of a project:
 
