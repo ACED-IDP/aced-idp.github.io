@@ -28,10 +28,10 @@ Usage: g3t add [OPTIONS] LOCAL_PATH
   local_path: relative path to file on local file system
 
 Options:
-  --specimen_id TEXT     fhir specimen identifier
-  --patient_id TEXT      fhir patient identifier
-  --task_id TEXT         fhir task identifier
-  --observation_id TEXT  fhir observation identifier
+  --specimen TEXT     fhir specimen identifier
+  --patient TEXT      fhir patient identifier
+  --task TEXT         fhir task identifier
+  --observation TEXT  fhir observation identifier
   --md5 TEXT             MD5 sum, if not provided, will be calculated before upload
 ```
 

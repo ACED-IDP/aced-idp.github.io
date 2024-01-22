@@ -36,7 +36,7 @@ As a convenience, the `g3t utilities meta create` command will create a minimal 
 e.g. The `g3t utilities meta create` will use the metadata identifiers specified on the `g3t add` command:
 
 ```sh
-g3t add myfile.cram  --patient_id P0 --specimen_id P0-BoneMarrow --task_id P0-Sequencing
+g3t add myfile.cram  --patient P0 --specimen P0-BoneMarrow --task_id P0-Sequencing
 g3t utilities meta create 
 ```
 Will produce metadata with these relationships:
