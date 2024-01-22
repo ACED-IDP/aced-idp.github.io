@@ -1,4 +1,4 @@
-# Documentation generator based on MkDocs
+# Documentatio generator based on MkDocs
 # Automatically documents API references
 # References:
 #   https://www.mkdocs.org/
@@ -45,7 +45,6 @@ repo_name: ACED-IDP/aced-idp.github.io
 theme:
   name: "material"
   features:
-    - navigation.expand
     - navigation.indexes 
     - navigation.footer
 
