@@ -18,7 +18,7 @@ g3t init --project_id=test-myproject_restricted
 Next, lets add a user to the primary project, but **not** the restricted project:
 
 ```sh
-g3t untilities users add --username someone@example.com --project_id=test-myproject
+g3t utilities users add --username someone@example.com --project_id=test-myproject
 ```
 
 Now, create a manifest using one of the methods above.
