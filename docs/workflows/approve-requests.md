@@ -9,7 +9,7 @@ Note: This example uses the ohsu program, but the same process applies to all pr
 
 ```text
 #  sysadmin adds role to user
-g3t access touch <data-access-committee-member>@<my-institution>.edu /programs/<my-institution> --roles requestor_updater_role
+g3t utilities access add <data-access-committee-member>@<my-institution>.edu /programs/<my-institution> --roles requestor_updater_role
 ```
 
 ## Creating a new project

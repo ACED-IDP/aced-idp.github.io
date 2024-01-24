@@ -11,8 +11,8 @@ For example, given the example above, let's say we needed to restrict access to 
 First, we will set up a second project, by convention with a `_restricted` suffix.
 
 ```sh
-g3t init --project_id=test-myproject
-g3t init --project_id=test-myproject_restricted
+g3t init test-myproject
+g3t init test-myproject_restricted
 ```
 
 Next, lets add a user to the primary project, but **not** the restricted project:
