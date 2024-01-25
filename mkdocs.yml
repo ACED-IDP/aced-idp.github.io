@@ -45,7 +45,6 @@ repo_name: ACED-IDP/aced-idp.github.io
 theme:
   name: "material"
   features:
-    - navigation.expand
     - navigation.indexes 
     - navigation.footer
 
