@@ -4,25 +4,32 @@
 
 Note: This example uses the ohsu program, but the same process applies to all programs.
 
-* A sysadmin will add the requestor role to a data-access-committee member(s)
+* A sysadmin will add the requestor role to a data-access-committee member(s) aka data steward
 * Only users with the requestor role can APPROVE and SIGN adding policies within their program
 
 ```text
-#  sysadmin adds role to user
-g3t utilities access add <data-access-committee-member>@<my-institution>.edu /programs/<my-institution> --roles requestor_updater_role
+## As an admin, I need to grant data steward privileges add the requester reader and updater role on a program to an un-privileged user
+g3t utilities access add data_steward_example@<institution>.edu --resource_path /programs/<program_name>/projects  --steward
+# As an admin, approve that request
+g3t utilities access sign
+
+
+
 ```
 
 ## Creating a new project
 
 * Any user may request a project be added to the institution's program.
 * The user who requested the project is automatically given the read and write roles.
-* Ony user's with the requestor_updater_role  can approve and sign a request
+* Ony users with the data steward role  can approve and sign a request
+* An administrator must create the project in the repository
 
+```text
 ## Adding a new user to a project
 
 * Any user may request a user be added to a project.
 * The `--write` flag will grant the user write access to the project.
-* Ony user's with the requestor_updater_role  can approve and sign a request
+* Ony users with the steward role can approve and sign a request
 
 ```text
 g3t utilities access sign --help
