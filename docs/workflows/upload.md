@@ -57,7 +57,5 @@ Note that we use `xargs` `-P 0` argument to run commands in parallel, greatly re
 
 ## Next steps
 
-
 * See the  <a href="/workflows/status/">status command</a> for more information on how to verify the manifest.
 * See the  <a href="/workflows/metadata/">metadata workflow section</a> for more information on how to create and upload metadata.
-

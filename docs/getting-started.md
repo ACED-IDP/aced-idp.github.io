@@ -22,7 +22,3 @@ For the ACED data commons, we have created a data dictionary based on the FHIR d
 > [more](https://gen3.org/resources/operator/#6-programs-and-projects)
 
 For the following examples, we will use the `aced` program with a project called `myproject`, please use the `g3t projects ls` command to verify what programs you have access to.
-
-## Next steps
-
-- [Install gen3-client](requirements/gen3-client.md)

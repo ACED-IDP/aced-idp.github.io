@@ -47,6 +47,7 @@ theme:
   features:
     - navigation.indexes 
     - navigation.footer
+    - content.code.copy
 
 markdown_extensions:
   - admonition

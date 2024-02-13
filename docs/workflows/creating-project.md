@@ -47,11 +47,7 @@ While you can work with an initialized repository locally, **an authorized user 
 
 ```
 
-
-
 ## Next steps
-
-At this point you should now be ready to dive further into the ACED-IDP ecosystem with the following guides:
 
 - [Adding users to a project](./add-users.md)
 - [Uploading data to a project](./upload.md)

@@ -12,7 +12,7 @@ The `gen3-tracker (g3t)` tool requires a working [Python 3](https://www.python.o
 # Optionally create a virtual environment
 python3 -m venv venv; source venv/bin/activate
 
-pip install gen3_util
+pip install gen3-tracker
 ```
 
 You can verify the installation was successful by then running the `g3t` command with the expected output being the latest version:
@@ -28,14 +28,14 @@ version: 0.0.14rc4
 This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-util/). If it is out of date, simply run the following to upgrade your local version:
 
 ```sh
-pip install -U gen3_util
+pip install -U gen3-tracker
 ```
 
 ### Configuration
 
 g3t uses the [gen3-client](https://gen3.org/resources/user/gen3-client/#2-configure-a-profile-with-credentials) configuration flow.
 
-After configuration, you can either specify the `--profile` option or set the `GEN3_UTIL_PROFILE=profile-name` environmental variable.
+After configuration, you can either specify the `--profile` option or set the `G3T_PROFILE=profile-name` environmental variable.
 
 
 ### Testing the configuration
@@ -67,7 +67,3 @@ Alternatively, you can set the environmental variables using the `EXPORT` functi
 ```sh
 export G3T_PROJECT_ID=aced-myproject
 ```
-
-## Next steps
-
-- [Create a Project](../workflows/creating-project.md)
