@@ -22,10 +22,10 @@ A binary executable of the latest version of the gen3-client should be downloade
 ### Installation Instructions
 
 ??? "macOS Installation Instructions"
-    1. Download the latest Linux version of the gen3-client.
-    2. Unzip the archive.
-    3. Add the unzipped executable to a directory, for example: `~/.gen3/gen3-client`
-    4. Open a terminal window.
+    1. Download the latest macOS version ([dataclient_osx.pkg][macos]).
+    2. Follow the instructions in the installer
+    3. Open a terminal window.
+    4. Move the executable to the default directory: `mv /Applications/gen3-client ~/.gen3/gen3-client`
     5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
     6. Run `source ~/.bash_profile` or restart your terminal.
     7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
