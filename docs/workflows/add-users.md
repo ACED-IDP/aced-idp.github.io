@@ -21,10 +21,3 @@ In order to implement these requests, **an authorized user will need to sign** t
 ```sh
 g3t utilities users add --username someone@example.com --project_id aced-myproject
 ```
-
-## Next steps
-
-At this point you should now be ready to dive further into the ACED-IDP ecosystem with the following guides:
-
-- [Uploading data to a project](./upload.md)
-- [Downloading data from a project](./portal-download.md)

@@ -21,7 +21,3 @@ Options:
                                 [default: meta]
 
 ```
-
-## Next steps
-
-- [Downloading data from a project](./portal-download.md)
