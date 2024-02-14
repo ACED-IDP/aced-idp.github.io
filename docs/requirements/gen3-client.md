@@ -6,7 +6,7 @@ title: gen3-client
 
 ## Downloading gen3-client
 
-A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases). Choose the file that matches your operating system (Windows, Linux, or macOS).
+A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/uc-cdis/cdis-data-client/releases). Choose the file that matches your operating system (Windows, Linux, or macOS).
 
 | Operating System | Gen3 Client                      | Checksum                   |
 |------------------|----------------------------------|----------------------------|
