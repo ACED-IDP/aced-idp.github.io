@@ -6,18 +6,52 @@ title: gen3-client
 
 ## Downloading gen3-client
 
-A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/uc-cdis/cdis-data-client/releases). Choose the file that matches your operating system (Windows, Linux, or macOS).
+A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases). Choose the file that matches your operating system (Windows, Linux, or macOS).
 
-| Operating System | Gen3 Client                      | Checksum                   |
-|------------------|----------------------------------|----------------------------|
-| macOS            | [dataclient_osx.pkg][macos]      | [checksums.txt][checksums] |
-| Linux            | [dataclient_linux.zip][linux]   | [checksums.txt][checksums] |
-| Windows          | [dataclient_win64.zip][windows] | [checksums.txt][checksums] |
+| Operating System | Gen3 Client                              | Checksum                   |
+|------------------|------------------------------------------|----------------------------|
+| macOS            | [gen3-client-macos.pkg][macos]           | [checksums.txt][checksums] |
+| Linux (amd64)    | [gen3-client-linux-amd64.zip][linux]     | [checksums.txt][checksums] |
+| Windows (amd64)  | [gen3-client-windows-amd64.zip][windows] | [checksums.txt][checksums] |
 
-[macos]: https://github.com/uc-cdis/cdis-data-client/releases/download/1.2.0/dataclient_osx.pkg
-[linux]: https://github.com/uc-cdis/cdis-data-client/releases/download/1.2.0/dataclient_linux.zip
-[windows]: https://github.com/uc-cdis/cdis-data-client/releases/download/1.2.0/dataclient_win64.zip
-[checksums]: https://github.com/ACED-IDP/cdis-data-client/releases/download/1.2.0/checksums.txt
+
+[macos]: https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.pkg
+[linux]: https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-linux-amd64.zip
+[windows]: https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-windows-amd64.zip
+[checksums]: https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/checksums.txt
+
+### Checksum Verification
+
+In order to verify that the downloaded file can be trusted checksums are provided in [`checksums.txt`][checksums]. See below for examples of how to use this file.
+
+<details>
+<summary>Successful Verification</summary>
+
+To verify the integrity of the binaries on macOS run the following command in the same directory as the downloaded file:
+
+```sh
+$ shasum -c checksums.txt --ignore-missing
+gen3-client-macos.pkg: OK
+```
+
+If the `shasum` command outputs `OK` than the verification was successful and the executable can be trusted.
+
+</details>
+
+<details>
+<summary>Unsuccessful Verification</summary>
+
+Alternatively if the command outputs `FAILED` than the checksum did not match and the binary should not be run.
+
+```sh
+$ shasum -c checksums.txt --ignore-missing
+shasum: WARNING: 1 computed checksum did NOT match
+shasum: checksums.txt: no file was verified
+```
+
+In such a case please reach out to the ACED development team for assistance.
+
+</details>
 
 ### Installation Instructions
 
