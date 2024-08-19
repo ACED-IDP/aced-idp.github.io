@@ -55,6 +55,45 @@ find example-directory -type f  | xargs -P 0 -I PATH g3t add PATH
 
 Note that we use `xargs` `-P 0` argument to run commands in parallel, greatly reducing the amount of time to add many files to a manifest.
 
+## Add remote files to the manifest
+
+The general form of adding remote file(s) is the following:
+```sh
+g3t add s3://<Bucket>/<File> \
+  --etag <ETag> \
+  --size <Size> \
+  --modified <Date> \
+  --no-git-add
+```
+
+### Example
+
+To get the ETag, Size, and Date modified for a remote file, run the following `mc stat` command using the [MinIO client](https://min.io/docs/minio/linux/reference/minio-mc.html):
+```sh
+mc stat --json ceph/example-bucket/example.bam
+{
+ "status": "success",
+ "name": "example.bam",
+ "lastModified": "2024-02-21T09:20:24-08:00",
+ "size": 148299010745,
+ "etag": "17a5275404b41f52b042b43eb351f5ba-8840",
+ "type": "file",
+ "metadata": {
+  "Content-Type": "application/gzip"
+ }
+}
+```
+
+Then to add the remote file, run the following:
+
+```
+g3t add s3://example-bucket/file.bam \
+  --etag "17a5275404b41f52b042b43eb351f5ba-8840" \
+  --size 148299010745 \
+  --modified "2024-02-21T09:20:24-08:00" \
+  --no-git-add
+```
+
 ## Next steps
 
 * See the  <a href="/workflows/status/">status command</a> for more information on how to verify the manifest.
