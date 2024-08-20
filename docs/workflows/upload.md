@@ -60,10 +60,15 @@ Note that we use `xargs` `-P 0` argument to run commands in parallel, greatly re
 The general form of adding remote file(s) is the following:
 ```sh
 g3t add s3://<Bucket>/<File> \
-  --etag <ETag> \
-  --size <Size> \
-  --modified <Date> \
-  --no-git-add
+  --etag {ETag} \
+  --mime {mime_type} \
+  --modified {system_time} \
+  --no-git-add \
+  --patient {patient_id} \
+  --realpath {full_path} \
+  --size {system_size} \
+  --specimen {specimen_id} \
+  {static_parameters}
 ```
 
 ### Example
