@@ -25,7 +25,7 @@ version: 0.0.14rc4
 
 ### Upgrading g3t
 
-This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-util/). If it is out of date, simply run the following to upgrade your local version:
+This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-tracker/). If it is out of date, simply run the following to upgrade your local version:
 
 ```sh
 pip install -U gen3-tracker
