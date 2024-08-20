@@ -15,12 +15,10 @@ python3 -m venv venv; source venv/bin/activate
 pip install gen3-tracker
 ```
 
-You can verify the installation was successful by then running the `g3t` command with the expected output being the latest version:
+You can verify the installation was successful by then running the `g3t` command with the expected output being the [latest version](https://pypi.org/project/gen3-tracker/#history):
 
 ```sh
 g3t version
-version: 0.0.14rc4
- 
 ```
 
 ### Upgrading g3t
