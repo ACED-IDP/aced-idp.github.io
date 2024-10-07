@@ -54,11 +54,11 @@ username: someone@example.com
 
 The following options and environmental variables are synonymous, you may set them as environmental variables or pass them as parameters to the command line.
 
-| option       | environment     | comment             | example                        |
-|--------------|-----------------| ------------------- | ------------------------------ |
-| --project_id | G3T_PROJECT_ID  | authorization       |                                |
-| --profile    | G3T_PROFILE     | gen3-client profile |                                |
-| --format     | G3T_FORMAT      | Output format.      | yaml         |
+| option       | environment     | comment             | example       |
+|--------------|-----------------| ------------------- |---------------|
+| --project_id | G3T_PROJECT_ID  | authorization       | aced-test     |
+| --profile    | G3T_PROFILE     | gen3-client profile | production    |
+| --format     | G3T_FORMAT      | Output format.      | default: yaml |
 
 Alternatively, you can set the environmental variables using the `EXPORT` function e.g.:
 

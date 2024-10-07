@@ -1,21 +1,5 @@
 # Role Based Access Control
 
-# Adding Data Access Committee members
-
-Note: This example uses the ohsu program, but the same process applies to all programs.
-
-* A sysadmin will add the requestor role to a data-access-committee member(s) aka data steward
-* Only users with the requestor role can APPROVE and SIGN adding policies within their program
-
-```text
-## As an admin, I need to grant data steward privileges add the requester reader and updater role on a program to an un-privileged user
-g3t utilities access add data_steward_example@<institution>.edu --resource_path /programs/<program_name>/projects  --steward
-# As an admin, approve that request
-g3t utilities access sign
-
-
-
-```
 
 ## Creating a new project
 
@@ -32,18 +16,37 @@ g3t utilities access sign
 * Ony users with the steward role can approve and sign a request
 
 ```text
-g3t utilities access sign --help
-Usage: g3t utilities access sign [OPTIONS]
+g3t collaborator approve --help
+Usage: g3t collaborator approve [OPTIONS]
 
-  Sign all policies for a project. 
+  Sign an existing request (privileged).
 
 Options:
-  --username TEXT  Sign all requests for user within a project
+  --request_id TEXT  Sign only this request
+  --all              Sign all requests
+  --help             Show this message and exit.
 
 ```
 
 
 ## Use case
+
+# Adding Data Access Committee members
+
+Note: This example uses the ohsu program, but the same process applies to all programs.
+
+* A sysadmin will add the requestor role to a data-access-committee member(s) aka data steward
+* Only users with the requestor role can APPROVE and SIGN adding policies within their program
+
+```text
+## As an admin, I need to grant data steward privileges add the requester reader and updater role on a program to an un-privileged user
+g3t collaborator add  add data_steward_example@<institution>.edu --resource_path /programs/<program_name>/projects  --steward
+# As an admin, approve that request
+g3t collaborator approve
+
+
+
+```
 
 There are several institutions that are contributing data to ACED. Each institution has a different set of data access policies. 
 Each may have different requirements for how data is accessed, and who can access it. 

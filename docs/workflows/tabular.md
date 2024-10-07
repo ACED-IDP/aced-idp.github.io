@@ -15,30 +15,19 @@
 Convert the FHIR data to tabular form.
 
 ```sh
- g3t utilities meta to_tabular --help
-Usage: g3t utilities meta to_tabular [OPTIONS] META_DATA_PATH
-                                     TABULAR_DATA_PATH
+ g3t meta dataframe --help
+Usage: g3t meta dataframe [OPTIONS] [DIRECTORY_PATH] [OUTPUT_PATH]
 
-  Convert FHIR to tabular format (experimental)
+  Render a metadata dataframe.
 
-  meta_data_path: meta_data FHIR directory
-  tabular_data_path: tabular data directory
+  directory_path: The directory path to the metadata.
+  output_path: The output path for the dataframe. default [meta.csv]
 
 Options:
-  --file_type [tsv|xlsx]  Output file format: tsv or excel
-
-```
-
-Convert the tabular data to FHIR.
-
-```sh
-g3t utilities meta from_tabular --help
-Usage: g3t utilities meta from_tabular [OPTIONS] META_DATA_PATH
-                                       TABULAR_DATA_PATH
-
-  Convert tabular to FHIR format (experimental)
-
-  meta_data_path: meta_data FHIR directory
-  tabular_data_path: tabular data directory
+  --dtale                         Open the graph in a browser using the dtale
+                                  package for interactive data exploration.
+  --data_type [Specimen|DocumentReference|ResearchSubject]
+                                  Create a data frame for a specific data
+                                  type.  [required]
 
 ```
