@@ -37,7 +37,7 @@ e.g. The `g3t utilities meta create` will use the metadata identifiers specified
 
 ```sh
 g3t add myfile.cram  --patient P0 --specimen P0-BoneMarrow --task_id P0-Sequencing
-g3t utilities meta create 
+g3t meta init
 ```
 Will produce metadata with these relationships:
 
