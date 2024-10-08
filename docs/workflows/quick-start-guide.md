@@ -14,13 +14,13 @@ Please ensure you have the following dependencies installed:
 
 The following options and environmental variables are synonymous, you may set them as environmental variables or pass them as parameters to the command line.
 
-| option       | environment     | comment             | example       |
-|--------------|-----------------| ------------------- |---------------|
-| --project_id | G3T_PROJECT_ID  | authorization       | aced-test     |
-| --profile    | G3T_PROFILE     | gen3-client profile | production    |
-| --format     | G3T_FORMAT      | Output format.      | default: yaml |
+| option       | environment     | comment             | example         |
+|--------------|-----------------| ------------------- |-----------------|
+| --project_id | G3T_PROJECT_ID  | authorization       | aced-myproject  |
+| --profile    | G3T_PROFILE     | gen3-client profile | production      |
+| --format     | G3T_FORMAT      | Output format.      | default: yaml   |
 
-Alternatively, you can set the environmental variables using the `EXPORT` function e.g.:
+Alternatively, to set the environmental variables using the `EXPORT` function e.g.:
 
 ```sh
 export G3T_PROJECT_ID=aced-myproject
@@ -33,14 +33,14 @@ This section outlines how to add data to ACED IDP. Many `g3t` commands behave si
 ### Initialize a new project:
 
 ```
-g3t init aced-demo
+g3t init aced-myproject
 ```
 
 * Similar to `git init`, this command initializes a new project in the current directory
-* The id is `aced-demo`; the program name is `aced`, the project name is `demo`
+* The id is `aced-myproject`; the program name is `aced`, the project name is `myproject`
 * `Program name` is predefined by the institution, the `g3t ping` command will show the available programs
 * `Project name` must be unique within the server, and must be alphanumeric and contain no spaces
-
+* For more information, see [creating a project](creating-project.md)
 
 ### Add file(s):
 
@@ -51,6 +51,7 @@ g3t add folder/file2.tsv
 
 * This command will record an entry for each file in the `MANIFEST` directory.
 * Optionally you can tag each file with patient, specimen or other identifiers. See `g3t add --help` for more information.
+* Note: `g3t add`, as opposed to git add, creates entries for data files rather than just staging files for a g3t commit.  Your data files remain in place and are not checked in. 
 
 
 ### Create meta data for your files. The `g3t meta init` command will take care of creating FHIR compliant data for you.
@@ -82,6 +83,8 @@ Additional metadata files for patient, specimen, and other entities will be gene
 ```
 g3t meta validate
 ```
+
+The system will print summary counts and an informative messages if the metadata is invalid.
 
 
 ### Check that the expected files are queued for upload
@@ -118,7 +121,7 @@ Check that your data was uploaded successfully by viewing on the Exploration tab
 g3t clone [OPTIONS] PROJECT_ID 
 ```
 
-The clone command will download the MANIFEST/ and META/ directories associated with the project. 
+The clone command will download the MANIFEST/ and META/ directories associated with the project into its own directory.
 The `PROJECT_ID` is the name of the project you wish to download.
 
 ```commandline

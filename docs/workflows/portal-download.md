@@ -58,4 +58,4 @@ To download multiple files:
 gen3-client download-multiple --profile=aced --manifest=file-manifest.json
 ```
 
-Using the example project in the above screenshot, this command will download all 12 JSON files from the aced-demo project into the current working directory.
+Using the example project in the above screenshot, this command will download all 12 JSON files from the project into the current working directory.

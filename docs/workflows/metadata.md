@@ -24,7 +24,7 @@ Additional resources can be added to the metadata files:
 
 * subjects (ResearchSubject, Patient)
 * specimens (Specimen)
-* assays (Task, DiagnosticReport)
+* assays (Task)
 * measurements (Observation)
 
 As a convenience, the `g3t  meta init` command will create a minimal metadata for each file in the project.
