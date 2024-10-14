@@ -33,8 +33,7 @@ pip install -U gen3-tracker
 
 g3t uses the [gen3-client](https://gen3.org/resources/user/gen3-client/#2-configure-a-profile-with-credentials) configuration flow.
 
-After configuration, you can either specify the `--profile` option or set the `G3T_PROFILE=profile-name` environmental variable.
-
+After configuration, you can either specify the `--profile` or set the `G3T_PROFILE=profile-name` environmental variable.
 
 ### Testing the configuration
 
@@ -54,11 +53,13 @@ username: someone@example.com
 
 The following options and environmental variables are synonymous, you may set them as environmental variables or pass them as parameters to the command line.
 
-| option       | environment     | comment             | example       |
-|--------------|-----------------| ------------------- |---------------|
-| --project_id | G3T_PROJECT_ID  | authorization       | aced-test     |
-| --profile    | G3T_PROFILE     | gen3-client profile | production    |
-| --format     | G3T_FORMAT      | Output format.      | default: yaml |
+| option       | environment    | comment             | example |
+| ------------ | -------------- | ------------------- | ------- |
+| --project_id | G3T_PROJECT_ID | authorization       |         |
+| --profile    | G3T_PROFILE    | gen3-client profile |         |
+| --format     | G3T_FORMAT     | Output format.      | yaml    |
+
+For example, a `ping` command using the `aced` profile we be `g3t --profile aced ping`
 
 Alternatively, you can set the environmental variables using the `EXPORT` function e.g.:
 
