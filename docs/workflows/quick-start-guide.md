@@ -54,9 +54,11 @@ g3t add folder/file2.tsv
 * This command will record an entry for each file in the `MANIFEST` directory.
 * Optionally you can tag each file with patient, specimen or other identifiers. See `g3t add --help` for more information.
 * Note: `g3t add`, as opposed to git add, creates entries for data files rather than just staging files for a g3t commit.  Your data files remain in place and are not checked in. 
+* For more information, see [adding data](upload.md)
 
+### Create meta data
 
-### Create meta data for your files. The `g3t meta init` command will take care of creating FHIR compliant data for you.
+The `g3t meta init` command will take care of creating FHIR compliant data for you.
 
 ```
 g3t meta init
@@ -105,6 +107,7 @@ g3t push
 ```
 
 Notes:
+
 * a push will fail if the metadata is not valid or if the files are not committed.
 * a push will fail a data file was already uploaded, use the `--overwrite` option to force an upload.
 
