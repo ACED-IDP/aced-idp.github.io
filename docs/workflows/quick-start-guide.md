@@ -20,6 +20,8 @@ The following options and environmental variables are synonymous, you may set th
 | --profile    | G3T_PROFILE     | gen3-client profile | production      |
 | --format     | G3T_FORMAT      | Output format.      | default: yaml   |
 
+For example, a `ping` command using the `aced` profile we be `g3t --profile aced ping`
+
 Alternatively, to set the environmental variables using the `EXPORT` function e.g.:
 
 ```sh
