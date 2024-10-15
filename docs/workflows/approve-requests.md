@@ -8,7 +8,7 @@
 * Ony users with the data steward role  can approve and sign a request
 * An administrator must create the project in the repository
 
-```text
+
 ## Adding a new user to a project
 
 * Any user may request a user be added to a project.
