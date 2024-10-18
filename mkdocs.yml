@@ -8,10 +8,8 @@ site_name: ACED-IDP Documentation
 
 nav:
 - index.md
-#- getting-started.md
 - Getting Started:
-  - requirements/gen3-client.md
-  - requirements/gen3-tracker.md
+  - requirements.md
   - workflows/quick-start-guide.md
 - Use Cases & Workflows:
   - workflows/creating-project.md
