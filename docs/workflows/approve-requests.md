@@ -1,5 +1,36 @@
 # Role Based Access Control
 
+
+## Creating a new project
+
+* Any user may request a project be added to the institution's program.
+* The user who requested the project is automatically given the read and write roles.
+* Ony users with the data steward role  can approve and sign a request
+* An administrator must create the project in the repository
+
+
+## Adding a new user to a project
+
+* Any user may request a user be added to a project.
+* The `--write` flag will grant the user write access to the project.
+* Ony users with the steward role can approve and sign a request
+
+```text
+g3t collaborator approve --help
+Usage: g3t collaborator approve [OPTIONS]
+
+  Sign an existing request (privileged).
+
+Options:
+  --request_id TEXT  Sign only this request
+  --all              Sign all requests
+  --help             Show this message and exit.
+
+```
+
+
+## Use case
+
 # Adding Data Access Committee members
 
 Note: This example uses the ohsu program, but the same process applies to all programs.
@@ -9,41 +40,13 @@ Note: This example uses the ohsu program, but the same process applies to all pr
 
 ```text
 ## As an admin, I need to grant data steward privileges add the requester reader and updater role on a program to an un-privileged user
-g3t utilities access add data_steward_example@<institution>.edu --resource_path /programs/<program_name>/projects  --steward
+g3t collaborator add  add data_steward_example@<institution>.edu --resource_path /programs/<program_name>/projects  --steward
 # As an admin, approve that request
-g3t utilities access sign
+g3t collaborator approve
 
 
 
 ```
-
-## Creating a new project
-
-* Any user may request a project be added to the institution's program.
-* The user who requested the project is automatically given the read and write roles.
-* Ony users with the data steward role  can approve and sign a request
-* An administrator must create the project in the repository
-
-```text
-## Adding a new user to a project
-
-* Any user may request a user be added to a project.
-* The `--write` flag will grant the user write access to the project.
-* Ony users with the steward role can approve and sign a request
-
-```text
-g3t utilities access sign --help
-Usage: g3t utilities access sign [OPTIONS]
-
-  Sign all policies for a project. 
-
-Options:
-  --username TEXT  Sign all requests for user within a project
-
-```
-
-
-## Use case
 
 There are several institutions that are contributing data to ACED. Each institution has a different set of data access policies. 
 Each may have different requirements for how data is accessed, and who can access it. 
