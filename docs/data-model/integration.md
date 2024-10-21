@@ -24,8 +24,8 @@ The process of integrating your data into the graph involves several steps:
     * Normalize Data: Split the spreadsheet data into FHIR-compliant resources.
 
 * Step 4: Utilize provided FHIR Tooling or Libraries
-    * FHIR Tooling: Use `g3t utilities meta to_tabular, from_tabular ` and associated libraries to support data conversion and validation.
-    * Validation: Use `g3t utilities meta validate` to validate the transformed data against FHIR specifications to ensure compliance and accuracy.
+    * FHIR Tooling: Use `g3t  meta dataframe ` and associated libraries to support data conversion and validation.
+    * Validation: Use `g3t  meta validate` to validate the transformed data against FHIR specifications to ensure compliance and accuracy.
 
 * Step 5: Import into FHIR-Compatible System
     * Load Data: Use `g3t commit` to load the transformed data into the aced system.
@@ -72,7 +72,7 @@ The mapping process typically involves several steps:
 
 ## Identifiers
 
-Identifiers in FHIR references typically include the following components: [see](https://hl7.org/fhir/datatypes.html#Identifier)
+Identifiers in FHIR references typically include the following components: [see more](https://hl7.org/fhir/datatypes.html#Identifier)
 
 > A string, typically numeric or alphanumeric, that is associated with a single object or entity within a given system. Typically, identifiers are used to connect content in resources to external content available in other frameworks or protocols.
 
@@ -84,7 +84,7 @@ Value: The actual value of the identifier within the specified system. For insta
 
 ## References
 
-By using identifiers in references, FHIR ensures that data can be accurately linked, retrieved, and interpreted across different systems and contexts within the healthcare domain, promoting interoperability and consistency in data exchange. [see](https://hl7.org/fhir/references.html)
+By using identifiers in references, FHIR ensures that data can be accurately linked, retrieved, and interpreted across different systems and contexts within the healthcare domain, promoting interoperability and consistency in data exchange. [see more](https://hl7.org/fhir/references.html)
 
 > Many of the defined elements in a resource are references to other resources. Using these references, the resources combine to build a web of information about healthcare.
 
@@ -92,21 +92,21 @@ By using identifiers in references, FHIR ensures that data can be accurately lin
 ## Key resources
 
 ### ResearchStudy
-> A scientific study of nature that sometimes includes processes involved in health and disease. [see](https://hl7.org/fhir/researchstudy.html)
+> A scientific study of nature that sometimes includes processes involved in health and disease. [see more](https://hl7.org/fhir/researchstudy.html)
 
 ### ResearchSubject
-> A ResearchSubject is a participant or object which is the recipient of investigative activities in a research study. [see](https://hl7.org/fhir/researchsubject.html)
+> A ResearchSubject is a participant or object which is the recipient of investigative activities in a research study. [see more](https://hl7.org/fhir/researchsubject.html)
 
 
 ### Patient 
-> Demographics and other administrative information about an individual or animal receiving care or other health-related services. [see](https://hl7.org/fhir/patient.html)
+> Demographics and other administrative information about an individual or animal receiving care or other health-related services. [see more](https://hl7.org/fhir/patient.html)
 
 ### Specimen
 
-> A sample to be used for analysis. [see](https://hl7.org/fhir/specimen.html)
+> A sample to be used for analysis. [see more](https://hl7.org/fhir/specimen.html)
 
 ### DocumentReference
-> A reference to a document of any kind for any purpose. [see](https://hl7.org/fhir/documentreference.html)
+> A reference to a document of any kind for any purpose. [see more](https://hl7.org/fhir/documentreference.html)
 
 
 See the  <a href="/workflows/metadata/">metadata workflow section</a> for more information on how to create and upload metadata.
