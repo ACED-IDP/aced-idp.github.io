@@ -21,7 +21,7 @@ All data directories are **relative to the root of the project**. You have flexi
 
 ```
  g3t add --help
-Usage: g3t add [OPTIONS] LOCAL_PATH
+Usage: g3t add LOCAL_PATH [OPTIONS] 
 
   Add file to the index.
 
