@@ -154,8 +154,10 @@ g3t push
 
 Notes:
 
-* a push will fail if the metadata is not valid or if the files are not committed.
-* a push will fail a data file was already uploaded, use the `--overwrite` option to force an upload.
+* This command launches a job to upload project data to the specified data platform.
+* a push checks that the metadata is valid and all files are committed before pushing.
+* a push will fail if a data file had already been uploaded. To force an upload, use the `--overwrite` option.
+* If a job fails, look for more information in the logs directory. This directory stores rolling logs, where each line is a JSON representing a single submission attempt.
 
 There are several other options available for the `push` command for specialized use cases. See `g3t push --help` for more information.
 
