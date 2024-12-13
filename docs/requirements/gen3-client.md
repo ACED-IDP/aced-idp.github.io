@@ -89,11 +89,11 @@ In such a case please reach out to the ACED development team for assistance.
 
 Before using the gen3-client to upload or download data, the `gen3-client` needs to be configured with API credentials downloaded from the [Profile page](https://aced-idp.org/identity).
 
-![Gen3 Profile page](profile.png)
+![Gen3 Profile page](/images/api-key.png)
 
 Download the access key from the portal and save it in the standard location `~/.gen3/credentials.json`
 
-![Gen3 Credentials](credentials.png)
+![Gen3 Credentials](/images/credentials.png)
 
 From the command-line, run the gen3-client configure command:
 

@@ -35,7 +35,6 @@ g3t uses the [gen3-client](https://gen3.org/resources/user/gen3-client/#2-config
 
 After configuration, you can either specify the `--profile` option or set the `G3T_PROFILE=profile-name` environmental variable.
 
-
 ### Testing the configuration
 
 The command `g3t ping` will confirm that the access key and gen3-client have been configured correctly
@@ -58,7 +57,7 @@ The following options and environmental variables are synonymous, you may set th
 |--------------|-----------------| ------------------- | ------------------------------ |
 | --project_id | G3T_PROJECT_ID  | authorization       |                                |
 | --profile    | G3T_PROFILE     | gen3-client profile |                                |
-| --format     | G3T_FORMAT      | Output format.      | yaml         |
+| --format     | G3T_FORMAT      | Output format.      | yaml                           |
 
 Alternatively, you can set the environmental variables using the `EXPORT` function e.g.:
 
