@@ -1,21 +1,23 @@
 
 # Query
 
-## Overview
+## Overview ⚙️
 
-Gen3 supports API access to Files and Metadata, allowing users to download and query data.
+Gen3 supports API access to Files and Metadata, allowing users to download and query their data via the Gen3 SDK and GraphQL queries.
 
-## Quick Start
+## Quick Start ⚡️
 
 *Adapted from the [Gen3 SDK Quick Start page](https://github.com/uc-cdis/gen3sdk-python/blob/master/docs/tutorial/quickStart.md)*
 
-## Install
+## 1. Install
+
+The Gen3 SDK is available for installation via PyPi:
 
 ```sh
 pip install gen3
 ```
 
-## 1. Authenticate
+## 2. Authenticate
 
 ??? "Configure a Profile with Credentials"
 
@@ -25,57 +27,86 @@ pip install gen3
 
     ![Gen3 Credentials](/images/credentials.png)
 
-## 2. Query
+## 3. Query
+
+### Query (`example.graphql`)
+```js
+query ExampleQuery {
+  files: file(first: 1000) {
+    file_name
+    project_id
+    id
+  }
+  patients: patient(first: 1000) {
+    name
+    project_id
+    id
+  }
+  observations: observation(first: 1000) {
+    code
+    project_id
+    id
+  }
+}
+```
+
+### Script (`example.py`)
+```sh
+from gen3.auth import Gen3Auth
+from gen3.query import Gen3Query
+import json
+
+auth = Gen3Auth()
+
+query = ''
+
+# Read in Example Query
+with open('example.graphql') as f:
+    query = f.read()
+
+response = Gen3Query.graphql_query(Gen3Query(auth), query_string=query)
+
+formatted = json.dumps(response, indent=2)
+
+print(formatted)
+
+# >>> Example Output
+```
+
+### Output
 
 ```sh
-TODO: Add Queries here
+$ python example.py
+{
+  "data": {
+    "files": [
+      {
+        "file_name": "example.bam",
+        "project_id": "cbds-example",
+      },...
+    ],
+    "patients": [
+      {
+        "name": "Example Name",
+        "project_id": "cbds-example",
+      },...
+    ],
+    "observations": [
+      {
+        "code": "Example Code",
+        "project_id": "cbds-example",
+      },...
+    ]
+  }
+}
 ```
 
-## Examples
+## Additional Resources 📚
 
-### Metadata
-
-```py
-import sys
-import logging
-import asyncio
-
-from gen3.auth import Gen3Auth
-from gen3.metadata import Gen3Metadata
-
-logging.basicConfig(filename="output.log", level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
-
-def main():
-    auth = Gen3Auth(refresh_file="credentials.json")
-    mds = Gen3Metadata(auth_provider=auth)
-
-    if mds.is_healthy():
-        print(mds.get_version())
-
-        guid = "95a41871-444c-48ae-8004-63f4ed1f0691"
-        metadata = {
-            "foo": "bar",
-            "fizz": "buzz",
-            "nested_details": {
-                "key1": "value1"
-            }
-        }
-        mds.create(guid, metadata, overwrite=True)
-
-        guids = mds.query("nested_details.key1=value1")
-
-        print(guids)
-        # >>> ['95a41871-444c-48ae-8004-63f4ed1f0691']
-
-if __name__ == "__main__":
-    main()
-```
-
-## Additional Resources
-
-- [Gen3 SDK Dcumentation](https://uc-cdis.github.io/gen3sdk-python/_build/html/index.html)
+- [Gen3 SDK Documentation](https://uc-cdis.github.io/gen3sdk-python/_build/html/index.html)
 
 - [Gen3 SDK Repo](https://github.com/uc-cdis/gen3sdk-python)
+
+- [Gen3 SDK PyPi](https://pypi.org/project/gen3)
 
 - [Guppy Syntax Docs](https://github.com/uc-cdis/guppy/blob/master/doc/queries.md)
