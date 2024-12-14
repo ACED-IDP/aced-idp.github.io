@@ -26,6 +26,7 @@ nav:
   - Exploring Data:
     - workflows/portal-explore.md
     - workflows/portal-download.md
+    - workflows/query.md
   - Utilities:
     - workflows/approve-requests.md
     - workflows/add-users.md
