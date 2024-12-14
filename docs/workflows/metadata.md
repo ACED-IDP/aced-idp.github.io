@@ -24,20 +24,20 @@ Additional resources can be added to the metadata files:
 
 * subjects (ResearchSubject, Patient)
 * specimens (Specimen)
-* assays (Task, DiagnosticReport)
+* assays (Task)
 * measurements (Observation)
 
-As a convenience, the `g3t utilities meta create` command will create a minimal metadata for each file in the project.
+As a convenience, the `g3t  meta init` command will create a minimal metadata for each file in the project.
 
 * This command will create a skeleton metadata file for each file added to the project using the `_id` parameters specified on the `g3t add` command.  
 * You can edit the metadata to map additional fields.
 * The metadata files can be created at any time, but the system will validate them before the changes are committed.
 
-e.g. The `g3t utilities meta create` will use the metadata identifiers specified on the `g3t add` command:
+e.g. The `g3t  meta init` will use the metadata identifiers specified on the `g3t add` command:
 
 ```sh
 g3t add myfile.cram  --patient P0 --specimen P0-BoneMarrow --task_id P0-Sequencing
-g3t utilities meta create 
+g3t meta init
 ```
 Will produce metadata with these relationships:
 
@@ -46,7 +46,7 @@ Will produce metadata with these relationships:
 When the project is committed, the system will validate new or changed records.  You may validate the metadata on demand by:
 
 ```sh
-$ g3t utilities meta validate --help
+$ g3t  meta validate --help
 Usage: g3t meta validate [OPTIONS] DIRECTORY
 
   Validate FHIR data in DIRECTORY.

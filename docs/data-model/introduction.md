@@ -26,7 +26,7 @@ Examine [resource](https://www.hl7.org/fhir/resource.html) definitions [here](ht
   * Can simply point to the [ResearchStudy](https://hl7.org/fhir/researchstudy.html), to indicate the file is part of the study
   * Can point to [Patient](https://hl7.org/fhir/patient.html), or [Specimen](https://hl7.org/fhir/specimen.html), to indicate the file is based on them
 * An [Observation](https://hl7.org/fhir/observation.html) can point to any entity    
-* A [Task](https://hl7.org/fhir/task.html), or [DiagnosticReport](https://hl7.org/fhir/diagnosticreport.html)  can provide [provenance](https://en.wikipedia.org/wiki/Provenance#Data_provenance) on how the file was created 
+* A [Task](https://hl7.org/fhir/task.html) can provide [provenance](https://en.wikipedia.org/wiki/Provenance#Data_provenance) on how the file was created 
 
 Each resource has at least one study controlled [official](https://hl7.org/fhir/codesystem-identifier-use.html#identifier-use-official) [Identifier](https://hl7.org/fhir/datatypes.html#Identifier).  Child resources have [Reference](http://www.hl7.org/fhir/references.html) fields to point to their parent.
 
