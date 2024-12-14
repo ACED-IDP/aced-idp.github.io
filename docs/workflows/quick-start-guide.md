@@ -183,7 +183,8 @@ To retrieve the actual data files associated with the file metadata, use the pul
 
 ```commandline
 mkdir aced-myproject
-g3t init myproject
+cd aced-myproject
+g3t init aced-myproject
 g3t pull
 ```
 
