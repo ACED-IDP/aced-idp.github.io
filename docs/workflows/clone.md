@@ -17,7 +17,4 @@ Usage: g3t clone [OPTIONS]
 
 Options:
   --project_id TEXT             Gen3 program-project G3T_PROJECT_ID
-  --data_type [meta|files|all]  Clone meta and/or files from remote.
-                                [default: meta]
-
 ```
