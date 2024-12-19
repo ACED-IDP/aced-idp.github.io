@@ -6,7 +6,7 @@ title: gen3-tracker
 
 ## Installing g3t
 
-The `gen3-tracker (g3t)` tool requires a working [Python 3](https://www.python.org/downloads/) installation no older than Python 3.10. Run the following in your working directory to install the latest version of g3t from the Python Package Index:
+The `gen3-tracker (g3t)` tool requires a working [Python 3](https://www.python.org/downloads/) installation no older than Python 3.12. Run the following in your working directory to install the latest version of g3t from the Python Package Index:
 
 ```sh
 # Optionally create a virtual environment
