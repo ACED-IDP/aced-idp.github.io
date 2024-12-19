@@ -122,7 +122,7 @@ gen3-client auth --profile=aced
 
 ## 3. Install gen3-tracker (g3t)
 
-The `gen3-tracker (g3t)` tool requires a working [Python 3](https://www.python.org/downloads/) installation no older than Python 3.10. Run the following in your working directory to install the latest version of g3t from the Python Package Index:
+The `gen3-tracker (g3t)` tool requires a working [Python 3](https://www.python.org/downloads/) installation no older than [Python 3.12](https://www.python.org/downloads/release/python-3120/). Run the following in your working directory to install the latest version of g3t from the Python Package Index:
 
 ```sh
 # Optionally create a virtual environment
