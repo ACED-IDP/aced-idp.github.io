@@ -1,0 +1,4 @@
+/* Prevent the '$' character in shell blocks from being copied */
+.gp {
+  user-select: none;
+}
