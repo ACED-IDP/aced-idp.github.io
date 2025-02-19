@@ -109,6 +109,10 @@ patient_ids = [p["patient_id"] for p in researchsubject_response["data"]["resear
 
 ### 3.3 Filter Specimens of Interest from Patient Ids
 ```python
+def execute_query(auth, query_string, variables=None):
+    """perform guppy query"""
+    return Gen3Query.graphql_query(Gen3Query(auth), query_string=query_string, variables=variables)
+
 def get_specimens(auth, patient_ids):
     """Fetch specimens associated with patient ids"""
     query = """
