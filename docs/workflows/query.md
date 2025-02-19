@@ -9,7 +9,7 @@ Gen3 supports API access to Files and Metadata, allowing users to download and q
 
 *Adapted from the [Gen3 SDK Quick Start page](https://github.com/uc-cdis/gen3sdk-python/blob/master/docs/tutorial/quickStart.md)*
 
-## Dependency and Credentials 
+## 1. Dependency and Credentials 
 
 
 Prior to installing, check a profile credentials. 
@@ -30,7 +30,7 @@ For new setup or renew of gen3 credentials:
     ![Gen3 Credentials](/images/credentials.png)
 
 
-## 1. Install
+## 2. Install
 
 The Gen3 SDK is available for installation via PyPi:
 
@@ -40,7 +40,7 @@ pip install gen3
 
 ## 3. Query
 
-### List available fields on an entity to query on
+### 3.1 List available fields on an entity to query on
 
 ```python
 def get_entity_fields(entity_name, auth):
@@ -73,6 +73,98 @@ entity_name = "Specimen"
 field_names = get_entity_fields(entity_name, auth)
 print(f"Available fields for {entity_name}:", field_names)
 ```
+### 3.2 Filter Patients of Interest (ResearchSubject Participants)
+```python
+researchsubject_query = """
+query ($filter: JSON) {
+  researchsubject(filter: $filter, first: 10000) {
+            id
+            patient_id
+            condition_diagnosis
+  }
+}
+"""
+
+researchsubject_variables = {
+    "filter": {
+        "IN": {
+            "condition_diagnosis": ["Infiltrating duct carcinoma, NOS"]
+        }
+    }
+}
+researchsubject_response = Gen3Query.graphql_query(
+    Gen3Query(auth),
+    query_string=researchsubject_query,
+    variables=researchsubject_variables
+)
+patient_ids = [p["patient_id"] for p in researchsubject_response["data"]["researchsubject"]]
+```
+
+### 3.3 Filter Specimens of Interest from Patient Ids
+```python
+def get_specimens(auth, patient_ids):
+    """Fetch specimens associated with patient ids"""
+    query = """
+    query ($filter: JSON) {
+        specimen (filter: $filter, first: 10000) {
+            id
+            patient_id
+            specimen_id
+            <other_sample_metadata>
+        }
+    }
+    """
+    variables = {"filter": {"IN": {"patient_id": patient_ids}}}
+    response = execute_query(auth, query, variables)
+    specimens = defaultdict(list)
+    for specimen in response["data"]["specimen"]:
+        if specimen["gene"]:
+            specimens[specimen["patient_id"]].append(specimen)
+    return specimens
+dat = get_specimens(auth, patient_ids)
+specimen_ids = [d[1][0]['id'] for d in dat.items()]
+```
+### 3.4 Filter Files Associated with Specimens of Interest
+
+```python
+def get_files(auth, specimen_ids):
+    """Fetch files associated with specimens."""
+    query = """
+    query ($filter: JSON) {
+        file (filter: $filter, first: 10000) {
+            id
+            specimen_id
+            platform
+        }
+    }
+    """
+    """
+    variables = {
+    "filter": {
+        "AND": [
+            {
+                "IN": {
+                    "specimen_id": specimen_ids
+                }
+            },
+            {
+                "LIKE": {
+                    "platform": ["%Illumina%"]
+
+                }
+            }
+        ]
+    }}
+    """
+    
+    variables = {"filter": {"IN": {"specimen_id": specimen_ids}}}
+    response = execute_query(auth, query, variables)
+    return response["data"]["file"]
+
+file_data = get_files(auth, specimen_ids)
+```
+
+## End to end simple workflow: 
 ### Query (`example.graphql`)
 ```js
 query ExampleQuery {
