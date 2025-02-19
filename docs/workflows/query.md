@@ -9,6 +9,27 @@ Gen3 supports API access to Files and Metadata, allowing users to download and q
 
 *Adapted from the [Gen3 SDK Quick Start page](https://github.com/uc-cdis/gen3sdk-python/blob/master/docs/tutorial/quickStart.md)*
 
+## Dependency and Credentials 
+
+
+Prior to installing, check a profile credentials. 
+Test:
+```bash
+g3t ping 
+```
+will return a list of projects that a profile has access to.
+
+For new setup or renew of gen3 credentials: 
+
+??? "Configure/Re-configure a Profile with Credentials"
+
+    Download an API Key from the [Profile page](https://aced-idp.org/identity) and save it to `~/.gen3/credentials.json`
+
+    ![Gen3 Profile page](/images/api-key.png)
+
+    ![Gen3 Credentials](/images/credentials.png)
+
+
 ## 1. Install
 
 The Gen3 SDK is available for installation via PyPi:
@@ -17,18 +38,41 @@ The Gen3 SDK is available for installation via PyPi:
 pip install gen3
 ```
 
-## 2. Authenticate
-
-??? "Configure a Profile with Credentials"
-
-    Download an API Key from the [Profile page](https://aced-idp.org/identity) and save it to `~/.gen3/credentials.json`
-
-    ![Gen3 Profile page](/images/api-key.png)
-
-    ![Gen3 Credentials](/images/credentials.png)
-
 ## 3. Query
 
+### List available fields on an entity to query on
+
+```python
+def get_entity_fields(entity_name, auth):
+    """Retrieve all field names for a given entity from the Gen3 GraphQL schema."""
+    query_template = f"""
+    {{
+      __type(name: "{entity_name}") {{
+        fields {{
+          name
+        }}
+      }}
+    }}
+    """
+
+    response = Gen3Query.graphql_query(
+        Gen3Query(auth),
+        query_string=query_template
+    )
+
+    if response and response.get("data", {}).get("__type", {}):
+        fields = response["data"]["__type"]["fields"]
+        field_names = [field["name"] for field in fields]
+        return field_names
+    else:
+        print(f"Failed to retrieve fields for {entity_name}:", response)
+        return []
+
+auth = Gen3Auth() 
+entity_name = "Specimen"  
+field_names = get_entity_fields(entity_name, auth)
+print(f"Available fields for {entity_name}:", field_names)
+```
 ### Query (`example.graphql`)
 ```js
 query ExampleQuery {
