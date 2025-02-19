@@ -39,7 +39,14 @@ pip install gen3
 ```
 
 ## 3. Query
+### 3.0 Authenticate 
 
+```python
+from gen3.auth import Gen3Auth
+from gen3.query import Gen3Query
+
+auth = Gen3Auth() 
+```
 ### 3.1 List available fields on an entity to query on
 
 ```python
@@ -68,7 +75,6 @@ def get_entity_fields(entity_name, auth):
         print(f"Failed to retrieve fields for {entity_name}:", response)
         return []
 
-auth = Gen3Auth() 
 entity_name = "Specimen"  
 field_names = get_entity_fields(entity_name, auth)
 print(f"Available fields for {entity_name}:", field_names)
@@ -164,7 +170,7 @@ def get_files(auth, specimen_ids):
 file_data = get_files(auth, specimen_ids)
 ```
 
-## End to end simple workflow: 
+## Simple end to end workflow: 
 ### Query (`example.graphql`)
 ```js
 query ExampleQuery {
