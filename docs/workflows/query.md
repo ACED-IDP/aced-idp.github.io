@@ -17,13 +17,11 @@ Test:
 ```bash
 g3t ping 
 ```
-will return a list of projects that a profile has access to.
+- will return a list of projects that a profile has access to.
 
-For new setup or renew of gen3 credentials: 
+- For new setup or renew of gen3 credentials - Follow steps to configure/re-configure a profile with credentials: 
 
-??? "Configure/Re-configure a Profile with Credentials"
-
-    Download an API Key from the [Profile page](https://aced-idp.org/identity) and save it to `~/.gen3/credentials.json`
+    - Download an API Key from the [Profile page](https://aced-idp.org/identity) and save it to `~/.gen3/credentials.json`
 
     ![Gen3 Profile page](/images/api-key.png)
 
@@ -39,6 +37,9 @@ pip install gen3
 ```
 
 ## 3. Query
+
+The following query examples provide a high-level overview on how to use Gen3 python SDK to authenticate, use the authentication to fetch column/metadata names, retrieve entity ids, and then use the ids to make nested queries. Each project would have a graph schema or definition with relations associated that are defined during data transformation or harmonization. The queries would depend on each project's graph definition traversals.   
+
 ### 3.0 Authenticate 
 
 ```python
@@ -140,7 +141,7 @@ def get_files(auth, specimen_ids):
         file (filter: $filter, first: 10000) {
             id
             specimen_id
-            platform
+            sample_type
         }
     }
     """
@@ -155,7 +156,7 @@ def get_files(auth, specimen_ids):
             },
             {
                 "LIKE": {
-                    "platform": ["%Illumina%"]
+                    "sample_type": ["%Primary Tumor%"]
 
                 }
             }
