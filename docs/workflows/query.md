@@ -50,6 +50,7 @@ auth = Gen3Auth()
 ```
 ### 3.1 List available fields on an entity to query on
 
+{% raw %}
 ```python
 def get_entity_fields(entity_name, auth):
     """Retrieve all field names for a given entity from the Gen3 GraphQL schema."""
@@ -80,7 +81,10 @@ entity_name = "Specimen"
 field_names = get_entity_fields(entity_name, auth)
 print(f"Available fields for {entity_name}:", field_names)
 ```
+{% endraw %}
+
 ### 3.2 Filter Patients of Interest (ResearchSubject Participants)
+
 ```python
 researchsubject_query = """
 query ($filter: JSON) {
@@ -108,6 +112,7 @@ patient_ids = [p["patient_id"] for p in researchsubject_response["data"]["resear
 ```
 
 ### 3.3 Filter Specimens of Interest from Patient Ids
+
 ```python
 def execute_query(auth, query_string, variables=None):
     """perform guppy query"""
@@ -135,6 +140,7 @@ def get_specimens(auth, patient_ids):
 dat = get_specimens(auth, patient_ids)
 specimen_ids = [d[1][0]['id'] for d in dat.items()]
 ```
+
 ### 3.4 Filter Files Associated with Specimens of Interest
 
 ```python
