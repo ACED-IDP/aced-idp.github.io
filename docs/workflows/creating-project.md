@@ -4,50 +4,48 @@ title: Creating a Project
 
 {% include '/note.md' %}
 
-## Create a project locally and remotely
+## CLI
 
+```bash
+$ g3t init --help
 
-The g3t init command is used to initialize a new repository in a directory. When you run this command, g3t creates a new subdirectory within the existing directory that houses the internal data structure required for version control. Here's a brief explanation of what happens when you use g3t init:
+Usage: g3t init [OPTIONS] [PROJECT_ID]
 
-Initialization: Running g3t init initializes a new Git repository in the current directory. It doesn't affect your existing files; instead, it adds:
-
-* a hidden subfolder `.g3t` within your project that houses the internal data structure required for version control.
-* a visible subfolder `META` within your project that houses the FHIR metadata files. 
-
-Existing Files: If you run g3t init in a directory that already contains files, g3t will not overwrite them. 
-
-```
-g3t init --help
-Usage: g3t init [OPTIONS]
-
-  Create project, both locally and on remote.
+  Initialize a new repository.
 
 Options:
-  --project_id TEXT  Gen3 program-project G3T_PROJECT_ID
-
+  --debug        Enable debug mode. G3T_DEBUG environment variable can also be used.
+  --help         Show this message and exit.
 ```
 
-Note the program-project is significant.  It is used to determine the location of the remote repository, bucket storage and access control.  Contact support for more on supported program and project names.
+## Overview
+The `g3t init` command is used to initialize a new project on your local machine. It works with existing files in the directory and creates a couple important directories:
 
-While you can work with an initialized repository locally, **an authorized user will need to sign** the project request before you can push to the remote repository. See `g3t utilities access sign`
+* `.g3t/`: a hidden subfolder within your project that houses the internal data structure required for version control.
+* `META/`: a visible subfolder within your project that houses the FHIR metadata files.
+* `MANIFEST/`: a visible subfolder within your project that houses additional file-specific metadata.
 
-## Directory structure
+An initialized project will look something like this...
+
 ```
 .
-├── .g3t                                  // local directory for commits, etc.
+├── .g3t                                  // g3t project state
 │   ├── config.yaml
 │   └── state
-├── META                                  // convention for FHIR metadata
-│   ├── DocumentReference.ndjson
-│   ├── Patient.ndjson
-│   ├── ResearchStudy.ndjson
-│   └── ResearchSubject.ndjson
-└── <your data here>                      // your research files
+├── .git                                  // git repository state
+├── META                                  // metadata in FHIR format
+├── MANIFEST
+└── <your data here>                      // existing data files maintained
     └── ...
 
 ```
 
+## Choosing a Project ID
+A project ID is used to initialize a unique project, taking the form of <program\>-<project\>. A project id is significant because it is used to determine the location of the remote repository, bucket storage and access control. Project IDs have a set of constraints, particularly program name is predefined by the institution, while project name must be unique within the server and alphanumeric without spaces. Contact an admin for a list of supported program names.
+
+### Authorization
+While you can work with an initialized repository locally, **an authorized user will need to sign** the project request before you can push to the remote repository. You can confirm you have with `g3t ping`
+
 ## Next steps
 
-- [Adding users to a project](./add-users.md)
-- [Uploading data to a project](./upload.md)
+- [Adding data to a project](./upload.md)
