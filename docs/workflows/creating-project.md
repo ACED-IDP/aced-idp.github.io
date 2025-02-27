@@ -19,11 +19,11 @@ Options:
 ```
 
 ## Overview
-The `g3t init` command is used to initialize a new project on your local machine. It works with existing files in the directory and creates a couple important directories:
+The `g3t init` command is used to initialize a new project in your current working directory. It works with existing files in the directory and creates a couple important directories:
 
-* `.g3t/`: a hidden subfolder within your project that houses the internal data structure required for version control.
-* `META/`: a visible subfolder within your project that houses the FHIR metadata files.
-* `MANIFEST/`: a visible subfolder within your project that houses additional file-specific metadata.
+* `.g3t/`: a hidden directory within your project that houses the internal data structure required for version control.
+* `META/`: a visible directory within your project that houses the FHIR metadata files.
+* `MANIFEST/`: a visible directory within your project that houses additional file-specific metadata.
 
 An initialized project will look something like this...
 
