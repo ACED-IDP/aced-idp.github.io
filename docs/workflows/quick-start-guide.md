@@ -104,7 +104,7 @@ g3t add folder/file2.tsv --patient patient_2
    * Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory for all your file details
 * Using the patient flag is one example of creating additional metadata about the file, in this case associating each file with a specified patient identifier.
 * `g3t add` varies from `git add`, as the `.dvc` file is what gets staged rather than the potentially large data file
-* Wildcards are not currently supported in g3t, so use an exact file path for each `g3t add`.
+* Multiple files can be added as the same time using wildcards wrapped in quotes, for example `g3t add "*.csv"`.
 * For more information on usage, such as adding entries for remote files or associating files with a other entities like a specimen, see [adding data](upload.md)
   <!-- TODO: update adding data -->
 

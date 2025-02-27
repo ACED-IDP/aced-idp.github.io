@@ -71,30 +71,25 @@ g3t add s3://example-bucket/file.bam \
 
 ## Associating files with other entities
 
-In some cases, you might want to associate a file to a particular entity like a subject or specimen. This can be done with a flag:
+In some cases, you might want to associate a file to a particular entity like a subject or sample. This can be done with a flag:
 
 ```bash
 g3t add path/to/file --patient patient_abc
 g3t add path/to/file --specimen specimen_001
 ```
 
-The info passed into the command after the flag represents the identifier that will be used to group file data on a patient. This can be combined with any of the above methods as an additional flag. The complete list of supported associations are
-1. patient
-2. specimen
-3. observation
-4. task
+The flag name corresponds to a type of FHIR resource specifically either a [patient](https://build.fhir.org/patient.html), [specimen](https://build.fhir.org/specimen.html), [task](https://build.fhir.org/task.html), or [observation](https://build.fhir.org/observation.html). The info passed into the command after the flag represents the identifier that will be used to group file data on a patient. This can be combined with any of the above methods as an additional flag.
 
 ## Adding multiple files to the manifest
 
-Currently, wildcards are not supported in g3t, so to upload multiple files to the manifest, use the `find` and `xargs` commands to send files the `g3t`. 
+Adding multiple files at once is possible as well, here are some examples
 
-For example, to add all files located in the `example-directory/` directory, run:
-
-```sh
-find example-directory -type f  | xargs -P 0 -I PATH g3t add PATH
+```bash
+g3t add "dir/*" # recursively add all files in top-level of dir directory to manifest
+g3t add "*.txt" # add all .txt files in current directory to manifest
 ```
 
-Note that we use `xargs` `-P 0` argument to run commands in parallel, greatly reducing the amount of time to add many files to a manifest.
+Make sure to surround your wildcard string in quotes, as otherwise it will only add the first matching file.
 
 ## Migration of existing project files
 
@@ -105,7 +100,7 @@ If you have an existing project that you want to migrate using g3t, you can do s
 
 ## A note on data directories
 
-All paths referring to data directories are stored **relative to the root of the project**. Here's a brief explanation of this convention:
+When creating metadata, all paths referring to data directories are stored **relative to the root of the project**. For instance, when doing `g3t add path/to/file.txt`, the output is stored in `MANIFEST/path/to/file.txt`. Here's a brief explanation of this convention:
 
 * Portability: Relative paths make your project more portable, meaning that it can be moved to different locations or shared with others without causing issues with file references. This is particularly important in data engineering projects where datasets and files may be stored in different locations.
 * Ease of Collaboration: When working on a data engineering project with multiple team members, using relative paths ensures that everyone can run the code without having to modify file paths based on their local directory structure. This promotes smoother collaboration.

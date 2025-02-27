@@ -37,7 +37,6 @@ An initialized project will look something like this...
 ├── MANIFEST
 └── <your data here>                      // existing data files maintained
     └── ...
-
 ```
 
 ## Choosing a Project ID
