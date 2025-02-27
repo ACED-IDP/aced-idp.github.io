@@ -47,4 +47,4 @@ While you can work with an initialized repository locally, **an authorized user 
 
 ## Next steps
 
-- [Adding data to a project](./upload.md)
+- [Adding data to a project](add-files.md)

@@ -53,7 +53,7 @@ To start, check what projects you have access to using the command
 g3t projects ls
 ```
 
-Check that you have permissions to edit `aced-myproject`. This is what allows you to push up data to the platform. If not, please contact a system adminstrator to get the correct permissions.
+Check that you have permissions to edit `aced-myproject`. This is what allows you to push up data to the platform. If not, please contact a system administrator to get the correct permissions.
 
 ### Specify a gen3 Profile
 
@@ -86,7 +86,7 @@ g3t init aced-myproject
 * Within the project, a `MANIFEST/` directory is used to store file metadata entries a `META/` directory is created to house metadata converted into the [FHIR](https://hl7.org/fhir/) standard
 * The project id is `aced-myproject` made from the program name `aced` and project name `myproject`. Specifically,
     * **Program name:** is predefined by the institution
-    * **Project name:** must be unique within the server, be alphanumeric, and contain no spaces or hypens
+    * **Project name:** must be unique within the server, be alphanumeric, and contain no spaces or hyphens
 * For more information, see [creating a project](creating-project.md)
 
 ### Add file(s)
@@ -105,7 +105,7 @@ g3t add folder/file2.tsv --patient patient_2
 * Using the patient flag is one example of creating additional metadata about the file, in this case associating each file with a specified patient identifier.
 * `g3t add` varies from `git add`, as the `.dvc` file is what gets staged rather than the potentially large data file
 * Multiple files can be added as the same time using wildcards wrapped in quotes, for example `g3t add "*.csv"`.
-* For more information on usage, such as adding entries for remote files or associating files with a other entities like a specimen, see [adding data](upload.md)
+* For more information on usage, such as adding entries for remote files or associating files with a other entities like a specimen, see [adding data](add-files.md)
   <!-- TODO: update adding data -->
 
 
@@ -117,7 +117,7 @@ Now that your files have been staged with metadata entries, you can create FHIR-
 g3t meta init
 ```
 
-* Using the file metadata entries created by the `g3t add` command, `g3t meta init` creates FHIR-compliant metadata files in the `META/` directory, where ecah file corresponds to a [FHIR resource](https://build.fhir.org/resourcelist.html). At a minimum, the directory will contain:
+* Using the file metadata entries created by the `g3t add` command, `g3t meta init` creates FHIR-compliant metadata files in the `META/` directory, where each file corresponds to a [FHIR resource](https://build.fhir.org/resourcelist.html). At a minimum, the directory will contain:
 
 | File                     | Contents                   |
 |--------------------------|----------------------------|
@@ -143,12 +143,12 @@ To ensure that the FHIR data has been properly formatted, you can call `g3t meta
 g3t meta validate
 ```
 
--The system will print summary counts and informative messages if the metadata is invalid.
+- The system will print summary counts and informative messages if the metadata is invalid.
 
 
 ### Check that the expected files are queued for upload
 
-You can double check that all of our files have been staged before commiting with `g3t status`
+You can double check that all of our files have been staged before committing with `g3t status`
 
 ```bash
 g3t status
@@ -161,9 +161,9 @@ With our checks complete, you can commit the metadata we created using `g3t comm
 ```bash
 g3t commit -m "adding tsv metadata"
 ```
-<!-- TODO this is not enough -->
+
 - Like git, this command bundles the staged files into a single set of changes.
-  - The `-m` flag provides a commit message detailingt the changes 
+  - The `-m` flag provides a commit message detailing the changes 
   - If the commit is successful, you will see the a summary of the changes
 - As a reminder, the files that are committed to git are the FHIR metadata in META/ and the dvc entries in MANIFEST/, not the data files themselves
 - See `g3t commit --help` for more info

@@ -14,8 +14,8 @@ nav:
 - Use Cases & Workflows:
   - workflows/creating-project.md
   - Submitting Data:
-    - workflows/upload.md
-    - Meta-Data:
+    - workflows/add-files.md
+    - Metadata:
         - data-model/introduction.md
         - workflows/metadata.md
         - data-model/integration.md

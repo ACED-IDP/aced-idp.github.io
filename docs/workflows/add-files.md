@@ -11,7 +11,7 @@ Adding files to a project is a two-step process:
 1. Adding file metadata entries to the manifest
 2. Creating FHIR-compliant metadata using the manifest
 
-Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` files in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platforn,
+Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` files in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platform,
 
 This page will guide you through the first step, detailing the multiple ways to add file metadata to the manifest.
 
@@ -43,7 +43,7 @@ Since the file is not localized, we need to manually provide some file informati
 2. **Date modified:** Date modified in system time
 3. **Size:** File size in bytes
 
-To get the ETag, Size, and Date modified for a remote file mirrored on S3, run the following `mc stat` command using the [MinIO client](https://min.io/docs/minio/linux/reference/minio-mc.html):
+To get the ETag, size, and date modified for a remote file mirrored on S3, run the following `mc stat` command using the [MinIO client](https://min.io/docs/minio/linux/reference/minio-mc.html):
 ```sh
 mc stat --json ceph/example-bucket/example.bam
 {
@@ -66,7 +66,6 @@ g3t add s3://example-bucket/file.bam \
   --etag "17a5275404b41f52b042b43eb351f5ba-8840" \
   --size 148299010745 \
   --modified "2024-02-21T09:20:24-08:00" \
-  --no-git-add
 ```
 
 ## Associating files with other entities
@@ -109,5 +108,4 @@ When creating metadata, all paths referring to data directories are stored **rel
 
 ## Next steps
 
-* See the  <a href="/workflows/status/">status command</a> for more information on how to verify the manifest.
 * See [metadata workflow](metadata.md) for more information on how to create and upload metadata.
