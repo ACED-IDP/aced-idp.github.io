@@ -43,7 +43,10 @@ repo_url: https://github.com/ACED-IDP/aced-idp.github.io
 repo_name: ACED-IDP/aced-idp.github.io
   
 theme:
-  name: "material"
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
   features:
     - navigation.indexes 
     - navigation.footer
