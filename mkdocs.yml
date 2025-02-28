@@ -32,6 +32,7 @@ nav:
     - workflows/add-users.md
   - Experimental Features:
     - workflows/tabular.md
+  - workflows/common-errors.md
 - Status Monitor ↗: https://aced-idp.github.io/status-monitor
 
 plugins:

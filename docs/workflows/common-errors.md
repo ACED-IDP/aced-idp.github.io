@@ -1,0 +1,37 @@
+# Common Errors
+
+## .ndjson is out of date
+**Error:** After `g3t` adding and committing a file, when you go to submit your data, "Document
+```sh
+$ g3t add file.txt
+$ g3t commit -m "adding file.txt"
+$ g3t push
+Please correct issues before pushing.
+Command `g3t status` failed with error code 1, stderr: WARNING: DocumentReference.ndjson is out of date 1969-12-31T16:00:00. The most recently changed file is MANIFEST/file.txt.dvc 2025-02-28T09:24:46.283870.  Please check DocumentReferences.ndjson
+No data file changes.
+```
+
+**Resolution:** As well as checking that all files are committed, `g3t status` also ensures that FHIR metadata in `META/` is up to date. This means that you likely missed a crucial step in the process, updating the FHIR metadata using the file manifest! The general flow for adding file metadata is `g3t add` > `g3t meta init` > `g3t commit`. To resolve this, update and commit the FHIR metadata:
+
+```sh
+$ g3t meta init
+Updated 2 metadata files.
+resources={'summary': {'DocumentReference': 1, 'ResearchStudy': 1}} exceptions=[]
+
+$ g3t push
+```
+
+To better understand the process of adding file metadata through the manifest, see [adding file metadata](add-files.md) and [adding FHIR metadata](metadata.md).
+
+## No new files to index
+
+**Error:**
+```sh
+$ g3t push
+No new files to index.  Use --overwrite to force
+```
+
+**Resolution:** When pushing data, `g3t` checks the manifest (`MANIFEST/` directory) to see if there are any files to update, including new files or modified files. If no files have been modified, then the push will not go through. To push up the same file data or push up new FHIR metadata (`META/`), use `g3t push --overwrite`
+
+
+
