@@ -15,7 +15,7 @@ This page will guide you through the first step, detailing the multiple ways to 
 
 ## Overview
 
-Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` files in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platform. The following are a set of ways to add file metadata to the manifest.
+Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` file in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platform. Here are a couple ways to add file metadata to the manifest.
 
 
 ## Adding a local file to the manifest
@@ -30,13 +30,13 @@ In this command, `g3t` creates a metadata entry for the specified data file, aut
 
 ## Adding a remote file to the manifest
 
-Sometimes you might want to generate metadata a remote file. To add a file in an Amazon S3 bucket to the manifest,
+Sometimes you might want to generate metadata for a remote file. To add a file in an Amazon S3 bucket to the manifest,
 
 ```sh
 g3t add s3://<Bucket>/<File> \
-  --etag {ETag} \
+ --etag {ETag} \
   --modified {system_time} \
-  --size {system_size} \
+ --size {system_size} \
   {static_parameters}
 ```
 
@@ -66,9 +66,9 @@ Then to add the remote file, run the following:
 
 ```sh
 g3t add s3://example-bucket/file.bam \
-  --etag "17a5275404b41f52b042b43eb351f5ba-8840" \
+ --etag "17a5275404b41f52b042b43eb351f5ba-8840" \
   --size 148299010745 \
-  --modified "2024-02-21T09:20:24-08:00" \
+ --modified "2024-02-21T09:20:24-08:00" \
 ```
 
 ## Associating files with other entities
@@ -80,18 +80,18 @@ g3t add path/to/file --patient patient_abc
 g3t add path/to/file --specimen specimen_001
 ```
 
-The flag name corresponds to a type of FHIR resource specifically either a [patient](https://build.fhir.org/patient.html), [specimen](https://build.fhir.org/specimen.html), [task](https://build.fhir.org/task.html), or [observation](https://build.fhir.org/observation.html). The info passed into the command after the flag represents the identifier that will be used to group file data on a patient. This can be combined with any of the above methods as an additional flag.
+The flag name corresponds to a type of FHIR resource specifically either a [patient](https://build.fhir.org/patient.html), [specimen](https://build.fhir.org/specimen.html), [task](https://build.fhir.org/task.html), or [observation](https://build.fhir.org/observation.html). The info passed into the command after the flag represents the identifier that will be used to group file data on a patient. This can be combined with the above methods as an additional flag.
 
 ## Adding multiple files to the manifest
 
 Adding multiple files at once is possible as well, here are some examples
 
 ```bash
-g3t add "dir/*" # recursively add all files in top-level of dir directory to manifest
-g3t add "*.txt" # add all .txt files in current directory to manifest
+g3t add "dir/*" # recursively add all files in the top level of dir directory to manifest
+g3t add "*.txt" # add all .txt files in the current directory to manifest
 ```
 
-Make sure to surround your wildcard string in quotes, as otherwise it will only add the first matching file.
+Make sure to surround your wildcard string in quotes, as it will only add the first matching file otherwise.
 
 ## Migration of existing project files
 
@@ -104,7 +104,7 @@ If you have an existing project that you want to migrate using g3t, you can do s
 
 When creating metadata, all paths referring to data directories are stored **relative to the root of the project**. For instance, when doing `g3t add path/to/file.txt`, the output is stored in `MANIFEST/path/to/file.txt`. Here's a brief explanation of this convention:
 
-* Portability: Relative paths make your project more portable, meaning that it can be moved to different locations or shared with others without causing issues with file references. This is particularly important in data engineering projects where datasets and files may be stored in different locations.
+* Portability: Relative paths make your project more portable, allowing it to be moved to different locations or shared with others without causing issues with file references. This is particularly important in data engineering projects where datasets and files may be stored in different locations.
 * Ease of Collaboration: When working on a data engineering project with multiple team members, using relative paths ensures that everyone can run the code without having to modify file paths based on their local directory structure. This promotes smoother collaboration.
 * Consistency Across Environments: Data engineering projects often involve processing large datasets, and the code needs to run consistently across different environments (e.g., development, testing, production). Relative paths help maintain this consistency by allowing the code to reference files and directories relative to the project's root.
 

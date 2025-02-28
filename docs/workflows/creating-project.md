@@ -19,7 +19,7 @@ Options:
 ```
 
 ## Overview
-The `g3t init` command is used to initialize a new project in your current working directory. It works with existing files in the directory and creates a couple important directories:
+The `g3t init` command initializes a new project in your current working directory. It works with existing files in the directory and creates a couple important directories:
 
 * `.g3t/`: a hidden directory within your project that houses the internal data structure required for version control.
 * `META/`: a visible directory within your project that houses the FHIR metadata files.
@@ -36,14 +36,14 @@ An initialized project will look something like this...
 ├── META                                  // metadata in FHIR format
 ├── MANIFEST
 └── <your data here>                      // existing data files maintained
-    └── ...
+ └── ...
 ```
 
 ## Choosing a Project ID
-A project ID is used to initialize a unique project, taking the form of <program\>-<project\>. A project id is significant because it is used to determine the location of the remote repository, bucket storage and access control. Project IDs have a set of constraints, particularly program name is predefined by the institution, while project name must be unique within the server and alphanumeric without spaces. Contact an admin for a list of supported program names.
+A project ID initializes a unique project, taking the form of <program\>-<project\>. A project ID is significant because it determines the location of the remote repository, bucket storage, and access control. Project IDs have a set of constraints, particularly the program name is predefined by the institution, while the project name must be unique within the server and alphanumeric without spaces. Contact an admin for a list of supported program names.
 
 ### Authorization
-While you can work with an initialized repository locally, **an authorized user will need to sign** the project request before you can push to the remote repository. You can confirm you have with `g3t ping`
+While you can work with an initialized repository locally, **an authorized user will need to sign** the project request before you can push your project to the data platfomr. You can confirm your project authorization with `g3t ping`
 
 ## Next steps
 

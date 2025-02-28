@@ -7,34 +7,34 @@ title: Requirements
 ## 1. Download gen3-client
 
 ??? "macOS Installation Instructions"
-    1. Download the [latest](https://github.com/uc-cdis/cdis-data-client/releases) macOS version.
-    2. Follow the instructions in the installer
-    3. Open a terminal window.
-    4. Move the executable to the default directory: `mv /Applications/gen3-client ~/.gen3/gen3-client`
-    5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
-    6. Run `source ~/.bash_profile` or restart your terminal.
-    7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
+ 1. Download the [latest](https://github.com/uc-cdis/cdis-data-client/releases) macOS version.
+ 2. Follow the instructions in the installer
+ 3. Open a terminal window.
+ 4. Move the executable to the default directory: `mv /Applications/gen3-client ~/.gen3/gen3-client`
+ 5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
+ 6. Run `source ~/.bash_profile` or restart your terminal.
+ 7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
 
 ??? "Linux Installation Instructions"
-    1. Download the [latest](https://github.com/uc-cdis/cdis-data-client/releases) Linux version of the gen3-client.
-    2. Unzip the archive.
-    3. Add the unzipped executable to a directory, for example: `~/.gen3/gen3-client`
-    4. Open a terminal window.
-    5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
-    6. Run `source ~/.bash_profile` or restart your terminal.
-    7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
+ 1. Download the [latest](https://github.com/uc-cdis/cdis-data-client/releases) Linux version of the gen3-client.
+ 2. Unzip the archive.
+ 3. Add the unzipped executable to a directory, for example: `~/.gen3/gen3-client`
+ 4. Open a terminal window.
+ 5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
+ 6. Run `source ~/.bash_profile` or restart your terminal.
+ 7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
 
 ??? "Windows Installation Instructions"
-    1. Download the [latest](https://github.com/uc-cdis/cdis-data-client/releases) Windows version of the gen3-client.
-    2. Unzip the archive.
-    3. Add the unzipped executable to a directory, for example: `C:\Program Files\gen3-client\gen3-client.exe`
-    4. Open the Start Menu and type "edit environment variables".
-    5. Open the option "Edit the system environment variables".
-    6. In the "System Properties" window that opens up, on the "Advanced" tab, click on the "Environment Variables" button.
-    7. In the box labeled "System Variables", find the "Path" variable and click "Edit".
-    8. In the window that pops up, click "New".
-    9. Type in the full directory path of the executable file, for example: `C:\Program Files\gen3-client`
-    10. Click "Ok" on all the open windows and restart the command prompt if it is already open by entering cmd into the start menu and hitting enter.
+ 1. Download the [latest](https://github.com/uc-cdis/cdis-data-client/releases) Windows version of the gen3-client.
+ 2. Unzip the archive.
+ 3. Add the unzipped executable to a directory, for example: `C:\Program Files\gen3-client\gen3-client.exe`
+ 4. Open the Start Menu and type "edit environment variables".
+ 5. Open the option "Edit the system environment variables".
+ 6. In the "System Properties" window that opens up, on the "Advanced" tab, click on the "Environment Variables" button.
+ 7. In the box labeled "System Variables", find the "Path" variable and click "Edit".
+ 8. In the window that pops up, click "New".
+ 9. Type in the full directory path of the executable file, for example: `C:\Program Files\gen3-client`
+ 10. Click "Ok" on all the open windows and restart the command prompt if it is already open by entering cmd into the start menu and hitting enter.
 
 ## 2. Configure a gen3-client Profile with Credentials
 
@@ -46,7 +46,7 @@ Download the access key from the portal and save it in the standard location `~/
 
 ![Gen3 Credentials](images/credentials.png)
 
-From the command-line, run the gen3-client configure command:
+From the command line, run the gen3-client configure command:
 
 ```sh
 gen3-client configure --profile=<profile_name> --cred=<credentials.json> --apiendpoint=https://aced-idp.org
@@ -87,7 +87,7 @@ g3t version
 
 ### Upgrading g3t
 
-This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-tracker/). If it is out of date, simply run the following to upgrade your local version:
+This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-tracker/). If it is out of date, run the following to upgrade your local version:
 
 ```sh
 pip install -U gen3-tracker
@@ -111,5 +111,4 @@ endpoint: https://aced-idp.org
 username: someone@example.com
 ```
 
-Now that gen3-client and gen3-tracker are set up, see the [Quickstart Guide](/workflows/quick-start-guide) on how to upload data to a project.
-
+Now that gen3-client and gen3-tracker are set up, see the [Quickstart Guide](/workflows/quick-start-guide) for how to upload data to a project.

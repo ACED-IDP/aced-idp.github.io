@@ -12,7 +12,7 @@ gen3 tracker, or g3t, is a command line tool for the ACED-IDP platform. It provi
 
 ## Requirements
 
-Please ensure you have completed the following set up from the [Requirements](/requirements) page:
+Please ensure you have completed the following setup from the [Requirements](/requirements) page:
 
 1. Installed gen3-client
 2. Configured a gen3-client profile with credentials
@@ -26,6 +26,7 @@ g3t --profile <your_g3t_profile_name> ping
 ```
 
 You should get a message like this
+
 > msg: 'Configuration OK: Connected using profile:aced'
 endpoint: https://aced-idp.org
 username: someone@example.com
@@ -38,14 +39,14 @@ along with the set of projects you have been provided access to.
 g3t [OPTIONS] COMMAND [ARGS]...
 ```
 
-We have built g3t on git, so many commands behave similarly to git with some key differences.These differences will be outlined for each step in the submission process.
+We have built g3t on git, so many commands behave similarly to git with some key differences. These differences will be outlined for each step in the submission process.
 
 ## 1. Upload Data to a Newly Approved Project
 
 The first use case we will cover is how to add data to a new project on the ACED-IDP.
 
 !!!note
-    For the following examples, we will use the `aced` program with a project called `myproject` and a `aced` g3t profile.
+ For the following examples, we will use the `aced` program with a project called `myproject` and an `aced` g3t profile.
 
 ### Check Project Permissions
 
@@ -55,13 +56,13 @@ To start, check what projects you have access to using the command
 g3t projects ls
 ```
 
-Check that you have permissions to edit `aced-myproject`. This is what allows you to push data up to the platform. If you do not have the correct permissions, please contact a system administrator.
+Check that you have permission to edit `aced-myproject`. This is what allows you to push data up to the platform. If you do not have the correct permissions, please contact a system administrator.
 
 ### Specify a gen3 Profile
 
-For most g3t commands, you will need to specify the gen3-client profile you want to use. This ensure that you are uploading to the right platform with the right credentials. There are two ways to set your profile...
+For most g3t commands, you need to specify the gen3-client profile you want to use. This ensures that you are uploading to the right platform with the right credentials. There are two ways to set your profile...
 
-To set profile using an environmental variable:
+To set a profile using an environmental variable:
 ```sh
 export G3T_PROFILE=aced
 ```
@@ -89,7 +90,7 @@ g3t init aced-myproject
     * `MANIFEST/`: stores file metadata entries
     * `META/`: stores metadata converted into the [FHIR](https://hl7.org/fhir/) standard
     * `.g3t/`: hidden, stores and manages g3t state for the project
-* The project id is `aced-myproject` made from the program name `aced` and project name `myproject`. Specifically,
+* The project ID is `aced-myproject` made from the program name `aced` and project name `myproject`. Specifically,
     * **Program name:** is predefined by the institution, defining what remote data buckets and endpoints you have access to
     * **Project name:** must be unique within the server, be alphanumeric, and contain no spaces or hyphens
 * For more information, see [creating a project](creating-project.md)
@@ -110,7 +111,7 @@ g3t add folder/file2.tsv --patient patient_2
     
 * Using the patient flag is one way to associate a file with a particular subject, in this case associating each file with a specified patient identifier.
 * `g3t add` varies from `git add`, as the `.dvc` file is what gets staged rather than the potentially large data file
-* Multiple files can be added as the same time using wildcards wrapped in quotes, for example `g3t add "*.csv"`.
+* Multiple files can be added at the same time by wrapping a wildcard string in quotes, for example, `g3t add "*.csv"`.
 * For more information on usage, such as adding entries for remote files or how to associate files with a sample, see [adding files](add-files.md)
 
 
@@ -137,7 +138,7 @@ g3t meta init
 | ResearchSubject.ndjson | Enrollment information |
 | Specimen.ndjson        | Sample information     |
 
-- `meta init` is a good example of where g3t differs from git! While in a git workflow you might go from `git add` straight to `git commit`, for adding files in g3t, we have to do `g3t add` > `g3t meta init` > `g3t commit` to track both the files and each file's metadata.
+- `meta init` is a good example of where g3t differs from git! While you might go from `git add` straight to `git commit` in a git workflow, we have to do `g3t add` > `g3t meta init` > `g3t commit` to track both the files and each file's metadata in g3t.
 - `meta init` focuses on creating metadata specific to the files you added. For your particular use case, you may also want to supply your own FHIR data, see [adding FHIR metadata](metadata.md)
 
 ### Check that the metadata is valid
@@ -153,7 +154,7 @@ g3t meta validate
 
 ### Check that the expected files are queued for upload
 
-You can double check that all of your files have been staged with `g3t status`
+You can double-check that all of your files have been staged with `g3t status`
 
 ```bash
 g3t status
@@ -170,7 +171,7 @@ g3t commit -m "adding tsv metadata"
 - Like git, this command bundles the staged files into a single set of changes.
   - The `-m` flag provides a commit message detailing the changes 
   - If the commit is successful, you will see a summary of the changes logged
-- As a reminder, the files that are committed to git are the FHIR metadata in META/ and the dvc entries in MANIFEST/, not the data files themselves
+- As a reminder, the files that are committed to git are the FHIR metadata in META/ and the .dvc entries in MANIFEST/, not the data files themselves
 - See [publishing a project](commit-push.md) for more info
 
 ### Push to ACED-IDP
@@ -193,7 +194,7 @@ g3t push
 
 ### View the Data on the Platform
 
-Congratulations, you have submitted data to the platform! To check that your data was uploaded,login and navigate to the Exploration page on [aced-idp.org](https://aced-idp.org)!
+Congratulations, you have submitted data to the platform! To check that your data was uploaded, login and navigate to the Exploration page on [aced-idp.org](https://aced-idp.org)!
 
 ## 2. Download Data from a Project on ACED-IDP
 
