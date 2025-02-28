@@ -15,7 +15,7 @@ This page will guide you through the first step, detailing the multiple ways to 
 
 ## Overview
 
-Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` file in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. For instance, `g3t add path/to/file.txt` writes an entry to `MANIFEST/path/to/file/txt`. This manifest is then used by `g3t meta init` to create FHIR-complaint metadata used to populate the data platform.
+A manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` file in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. For instance, `g3t add path/to/file.txt` writes an entry to `MANIFEST/path/to/file/txt`. This manifest is then used by `g3t meta init` to create FHIR-complaint metadata used to populate the data platform.
 
 Here are a couple ways to add file metadata to the manifest.
 

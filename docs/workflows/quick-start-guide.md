@@ -39,14 +39,14 @@ along with the set of projects you have been provided access to.
 g3t [OPTIONS] COMMAND [ARGS]...
 ```
 
-We have built g3t on git, so many commands behave similarly to git with some key differences. These differences will be outlined for each step in the submission process.
+g3t is built on git, so many commands behave similarly to git with some key differences. These differences will be outlined for each step in the submission process.
 
 ## 1. Upload Data to a Newly Approved Project
 
 The first use case we will cover is how to add data to a new project on the ACED-IDP.
 
 !!!note
- For the following examples, we will use the `aced` program with a project called `myproject` and an `aced` g3t profile.
+ The following examples will use the `aced` program with a project called `myproject` and an `aced` g3t profile.
 
 ### Check Project Permissions
 
@@ -60,7 +60,7 @@ Check that you have permission to edit `aced-myproject`. This is what allows you
 
 ### Specify a gen3 Profile
 
-For most g3t commands, you need to specify the gen3-client profile you want to use. This ensures that you are uploading to the right platform with the right credentials. There are two ways to set your profile...
+For most g3t commands, you need to specify the gen3-client profile you want to use. This ensures that you are uploading projects to the right platform with the right credentials. There are two ways to set your profile...
 
 To set a profile using an environmental variable:
 ```sh
