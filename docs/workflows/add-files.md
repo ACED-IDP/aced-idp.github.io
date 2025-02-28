@@ -4,16 +4,19 @@ title: Adding Files
 
 {% include '/note.md' %}
 
-## Overview
+## Background
 
 Adding files to a project is a two-step process:
 
 1. Adding file metadata entries to the manifest
 2. Creating FHIR-compliant metadata using the manifest
 
-Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` files in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platform,
-
 This page will guide you through the first step, detailing the multiple ways to add file metadata to the manifest.
+
+## Overview
+
+Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` files in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platform. The following are a set of ways to add file metadata to the manifest.
+
 
 ## Adding a local file to the manifest
 
