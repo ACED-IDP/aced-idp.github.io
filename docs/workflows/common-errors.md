@@ -33,5 +33,34 @@ No new files to index.  Use --overwrite to force
 
 **Resolution:** When pushing data, `g3t` checks the manifest (`MANIFEST/` directory) to see if there are any files to update, including new files or modified files. If no files have been modified, then the push will not go through. To push up the same file data or push up new FHIR metadata (`META/`), use `g3t push --overwrite`
 
+## Uncommitted changes
+
+**Error:** On the subsequent rounds of adding files, updating FHIR metadata, and committing the changes, you are unable to push up those new changes
+```
+$ g3t add hello.txt
+$ g3t meta init
+$ g3t commit -m "add hello file"
+
+$ g3t push
+Uncommitted changes found.  Please commit or stash them first.
+
+$ g3t status
+No data file changes.
+On branch main
+Changes not staged for commit:
+    ...
+	modified:   META/DocumentReference.ndjson
+```
+
+**Resolution:** This happened because the update FHIR metadata created in the META init was not staged for commit. To stage and commit the FHIR metadata, do:
+
+```sh
+$ git add META/DocumentReference.ndjson
+$ g3t commit -m "update DocumentReference.json"
+$ g3t push
+```
+
+Note that `git add` is used here as opposed to `g3t add`, as we are updating the project's FHIR metadata not the project's file manifest. If you want to make sure all, you can also use `g3t commit -am "update all files"`, where all changes get committed to the project.
+
 
 
