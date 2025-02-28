@@ -12,6 +12,8 @@ The `g3t commit` command saves your changes to the local repository. Here's a br
 - As a reminder, the files committed to git are the FHIR metadata in `META/` and the file metadata entries in `MANIFEST/`, not the data files themselves.
 - See `g3t commit --help` for more info
 
+You can confirm all your changes have been staged and committed using `g3t status`. This will ensure that your manifest data and FHIR metadata is up to date.
+
 ## Pushing Changes
 
 ### How to Push Changes

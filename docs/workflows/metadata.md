@@ -35,6 +35,9 @@ Depending on if a `patient` or `specimen` flag was specified, other resources ca
 * This command will create a skeleton metadata file for each file added to the project using the `patient`, `specimen`, `task`, and/or `observation` flags specified by the `g3t add` command.  
 * You can edit the metadata to map additional fields.
 * The metadata files can be created at any time, but the system will validate them before the changes are committed.
+* **Note:** If an existing file is modified, it won't get automatically staged
+  - For instance, if `DocumentReference.json` is already created and it has to be updated to reflect an additional file, this change is not automatically staged.
+  - Make sure to either `git add META/` or use the `-a` flag in `g3t commit` to ensure that your FHIR metadata changes are staged.
 
 ### Example
 To add a cram file that's associated with a subject, sample, and particular task

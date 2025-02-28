@@ -15,7 +15,9 @@ This page will guide you through the first step, detailing the multiple ways to 
 
 ## Overview
 
-Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` file in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. Then, this populated directory is what gets referenced in `g3t meta init` to create FHIR-complaint metadata used to populate the data platform. Here are a couple ways to add file metadata to the manifest.
+Briefly, a manifest is a collection of file metadata entries. Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory of your file metadata. We update that manifest using `g3t add`. When you `g3t add` a file, an entry is written to a  `.dvc` file in the `MANIFEST` directory, where the dvc file path mirrors the original file path relative to the root of the project. For instance, `g3t add path/to/file.txt` writes an entry to `MANIFEST/path/to/file/txt`. This manifest is then used by `g3t meta init` to create FHIR-complaint metadata used to populate the data platform.
+
+Here are a couple ways to add file metadata to the manifest.
 
 
 ## Adding a local file to the manifest
@@ -70,6 +72,10 @@ g3t add s3://example-bucket/file.bam \
   --size 148299010745 \
  --modified "2024-02-21T09:20:24-08:00" \
 ```
+
+## Modifying an existing file in the manifest
+
+You can use `g3t add` to also modify existing files that are already tracked in the manifest. When you do so, the `g3t add` command will maintain the existing information and update any values that are passed in as flags. For local files, it will re-populate the file metadata according to its current state in the repo. For remote files, you will have to manually update those fields yourself.
 
 ## Associating files with other entities
 
