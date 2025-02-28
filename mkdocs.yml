@@ -32,7 +32,6 @@ nav:
     - workflows/add-users.md
   - Experimental Features:
     - workflows/tabular.md
-    - workflows/restrict-access.md
 - Status Monitor ↗: https://aced-idp.github.io/status-monitor
 
 plugins:

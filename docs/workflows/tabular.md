@@ -1,33 +1,26 @@
+---
+title: Create Tabular Metadata
+---
 
-## Integrate your data
+{% include '/note.md' %}
 
+## Creating Tabular Data
 
-### Tabular
-
-
-> You can now seamlessly export and import data from TSV and Excel spreadsheets.
-> 
-> These are new experimental features in this release. We invite users to explore and provide feedback on these additions, which are still in the testing phase.
-> Your input will be invaluable in refining and improving these features for future releases.
-> 
-> `Thank you` for being part of our commitment to delivering cutting-edge solutions.
-
-Convert the FHIR data to tabular form.
+On the Explorer page on the data platform, FHIR metadata gets flattened out from a graph structure to a tabular format so that it is more easily visualized by users. For complex use cases, you might want to see what the flattened version of the metadata looks like before submitting the data through `g3t push`. This can be done using `g3t meta dataframe`
 
 ```sh
- g3t meta dataframe --help
-Usage: g3t meta dataframe [OPTIONS] [DIRECTORY_PATH] [OUTPUT_PATH]
+Usage: g3t meta dataframe [OPTIONS] {Specimen|DocumentReference|ResearchSubjec
+                          t|MedicationAdministration|GroupMember}
+                          [DIRECTORY_PATH] [OUTPUT_PATH]
 
   Render a metadata dataframe.
 
-  directory_path: The directory path to the metadata.
-  output_path: The output path for the dataframe. default [meta.csv]
+  DIRECTORY_PATH: The directory path to the metadata.
+  OUTPUT_PATH: The output path for the dataframe. Optional, defaults to "{Specimen|DocumentReference|ResearchSubject|MedicationAdministration|GroupMember}.csv"
 
 Options:
-  --dtale                         Open the graph in a browser using the dtale
-                                  package for interactive data exploration.
-  --data_type [Specimen|DocumentReference|ResearchSubject]
-                                  Create a data frame for a specific data
-                                  type.  [required]
-
+  --dtale  Open the graph in a browser using the dtale package for interactive
+           data exploration. Requires pip install dtale
+  --debug
+  --help   Show this message and exit
 ```
