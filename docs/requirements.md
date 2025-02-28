@@ -82,7 +82,7 @@ pip install gen3-tracker
 You can verify the installation was successful by then running the `g3t` command with the expected output being the [latest version](https://pypi.org/project/gen3-tracker/#history):
 
 ```sh
-g3t version
+g3t --version
 ```
 
 ### Upgrading g3t
