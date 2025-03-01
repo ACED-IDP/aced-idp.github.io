@@ -4,6 +4,8 @@ This mkdocs-based codebase deploys documentation to [aced-idp.github.io](https:/
 
 <a href="https://aced-idp.github.io">![Main landing page for ACED IDP](./docs/images/main-page.png)</a>
 
+It is built using [mkdocs-material](https://squidfunk.github.io/mkdocs-material/reference/) and [mkdocs-macros-plugin](https://mkdocs-macros-plugin.readthedocs.io/en/latest/)
+
 # Local Development
 
 ```shell

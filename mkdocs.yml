@@ -14,8 +14,8 @@ nav:
 - Use Cases & Workflows:
   - workflows/creating-project.md
   - Submitting Data:
-    - workflows/upload.md
-    - Meta-Data:
+    - workflows/add-files.md
+    - Metadata:
         - data-model/introduction.md
         - workflows/metadata.md
         - data-model/integration.md
@@ -32,7 +32,7 @@ nav:
     - workflows/add-users.md
   - Experimental Features:
     - workflows/tabular.md
-    - workflows/restrict-access.md
+  - workflows/common-errors.md
 - Status Monitor ↗: https://aced-idp.github.io/status-monitor
 
 plugins:
@@ -43,7 +43,10 @@ repo_url: https://github.com/ACED-IDP/aced-idp.github.io
 repo_name: ACED-IDP/aced-idp.github.io
   
 theme:
-  name: "material"
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
   features:
     - navigation.indexes 
     - navigation.footer
@@ -51,6 +54,9 @@ theme:
 
 markdown_extensions:
   - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span

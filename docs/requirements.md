@@ -4,12 +4,9 @@ title: Requirements
 
 # Requirements
 
-
-{% include '/note.md' %}
-
 ## 1. Download gen3-client
 
-A binary executable of the latest version of the gen3-client should be downloaded from the following Table or from the [Release page on Github](https://github.com/ACED-IDP/cdis-data-client/releases). Choose the file that matches your operating system (Windows, Linux, or macOS).
+Download the binary executable that matches your operating system.
 
 | Operating System | Gen3 Client                              | Checksum                   |
 |------------------|------------------------------------------|----------------------------|
@@ -27,78 +24,73 @@ A binary executable of the latest version of the gen3-client should be downloade
 
 In order to verify that the downloaded file can be trusted checksums are provided in [`checksums.txt`][checksums]. See below for examples of how to use this file.
 
-<details>
-<summary>Successful Verification</summary>
+=== "Successful Verification"
+    To verify the integrity of the binaries on macOS run the following command in the same directory as the downloaded file:
 
-To verify the integrity of the binaries on macOS run the following command in the same directory as the downloaded file:
+    ```sh
+    $ shasum -c checksums.txt --ignore-missing
+    gen3-client-macos.pkg: OK
+    ```
 
-```sh
-$ shasum -c checksums.txt --ignore-missing
-gen3-client-macos.pkg: OK
-```
+    If the `shasum` command outputs `OK` than the verification was successful and the executable can be trusted.
 
-If the `shasum` command outputs `OK` than the verification was successful and the executable can be trusted.
+=== "Unsuccessful Verification"
 
-</details>
+    Alternatively if the command outputs `FAILED` than the checksum did not match and the binary should not be run.
 
-<details>
-<summary>Unsuccessful Verification</summary>
+    ```sh
+    $ shasum -c checksums.txt --ignore-missing
+    shasum: WARNING: 1 computed checksum did NOT match
+    shasum: checksums.txt: no file was verified
+    ```
 
-Alternatively if the command outputs `FAILED` than the checksum did not match and the binary should not be run.
-
-```sh
-$ shasum -c checksums.txt --ignore-missing
-shasum: WARNING: 1 computed checksum did NOT match
-shasum: checksums.txt: no file was verified
-```
-
-In such a case please reach out to the ACED development team for assistance.
-
-</details>
+    In such a case please reach out to the ACED development team for assistance.
 
 ### Installation Instructions
 
-??? "macOS Installation Instructions"
-    1. Download the latest macOS version ([dataclient_osx.pkg][macos]).
-    2. Follow the instructions in the installer
+
+=== "macOS"
+    1. Download the [macOS version](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-macos.pkg) of the gen3-client.
+    2. Run the gen3-client pkg, following the instructions in the installer.
     3. Open a terminal window.
-    4. Move the executable to the default directory: `mv /Applications/gen3-client ~/.gen3/gen3-client`
-    5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
+    4. Move the executable to the default directory: `mv /Applications/gen3-client ~/.gen3/gen3-client`.
+    5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`.
     6. Run `source ~/.bash_profile` or restart your terminal.
-    7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
+    7.  Now you can execute the program by opening a terminal window and entering the command `gen3-client`.
 
-??? "Linux Installation Instructions"
-    1. Download the latest Linux version of the gen3-client.
+
+=== "Linux"
+    1. Download the [Linux version](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-linux-amd64.zip) of the gen3-client.
     2. Unzip the archive.
-    3. Add the unzipped executable to a directory, for example: `~/.gen3/gen3-client`
+    3. Add the unzipped executable to a directory, for example: `~/.gen3/gen3-client`.
     4. Open a terminal window.
-    5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`
+    5. Add the directory containing the executable to your Path environment variable by entering this command in the terminal: `echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile`.
     6. Run `source ~/.bash_profile` or restart your terminal.
-    7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`
+    7. Now you can execute the program by opening a terminal window and entering the command `gen3-client`.
 
-??? "Windows Installation Instructions"
-    1. Download the Windows  version of the gen3-client.
+=== "Windows"
+    1. Download the [Windows version](https://github.com/ACED-IDP/cdis-data-client/releases/latest/download/gen3-client-windows-amd64.zip) of the gen3-client.
     2. Unzip the archive.
-    3. Add the unzipped executable to a directory, for example: `C:\Program Files\gen3-client\gen3-client.exe`
+    3. Add the unzipped executable to a directory, for example: `C:\Program Files\gen3-client\gen3-client.exe`.
     4. Open the Start Menu and type "edit environment variables".
     5. Open the option "Edit the system environment variables".
     6. In the "System Properties" window that opens up, on the "Advanced" tab, click on the "Environment Variables" button.
     7. In the box labeled "System Variables", find the "Path" variable and click "Edit".
-    8. In the window that pops up, click "New".
-    9. Type in the full directory path of the executable file, for example: `C:\Program Files\gen3-client`
+    8.  In the window that pops up, click "New".
+    9.  Type in the full directory path of the executable file, for example: `C:\Program Files\gen3-client`.
     10. Click "Ok" on all the open windows and restart the command prompt if it is already open by entering cmd into the start menu and hitting enter.
 
-## 2. Configure a Profile with Credentials
+## 2. Configure a gen3-client Profile with Credentials
 
-Before using the gen3-client to upload or download data, the `gen3-client` needs to be configured with API credentials downloaded from the [Profile page](https://aced-idp.org/identity).
+To use the gen3-client, you need to configure  `gen3-client` with API credentials downloaded from the [Profile page](https://aced-idp.org/Profile).
 
-![Gen3 Profile page](profile.png)
+![Gen3 Profile page](images/profile.png)
 
 Download the access key from the portal and save it in the standard location `~/.gen3/credentials.json`
 
-![Gen3 Credentials](credentials.png)
+![Gen3 Credentials](images/credentials.png)
 
-From the command-line, run the gen3-client configure command:
+From the command line, run the gen3-client configure command:
 
 ```sh
 gen3-client configure --profile=<profile_name> --cred=<credentials.json> --apiendpoint=https://aced-idp.org
@@ -110,7 +102,7 @@ gen3-client configure --profile=demo --cred=~/Downloads/credentials.json --apien
 gen3-client configure --profile=demo --cred=C:\Users\demo\Downloads\credentials.json --apiendpoint=https://aced-idp.org
 ```
 
-To confirm you successfully configured a profile with the correct authorization privileges, you can run the `gen3-client auth` command, which should list your access privileges for each project in the commons you have access to:
+Run the `gen3-client auth` command to confirm you configured a profile with the correct authorization privileges. Then, to list your access privileges for each project in the commons you have access to:
 
 ```sh
 gen3-client auth --profile=aced
@@ -134,12 +126,12 @@ pip install gen3-tracker
 You can verify the installation was successful by then running the `g3t` command with the expected output being the [latest version](https://pypi.org/project/gen3-tracker/#history):
 
 ```sh
-g3t version
+g3t --version
 ```
 
 ### Upgrading g3t
 
-This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-tracker/). If it is out of date, simply run the following to upgrade your local version:
+This version should match the latest version on the [PyPi page](https://pypi.org/project/gen3-tracker/). If it is out of date, run the following to upgrade your local version:
 
 ```sh
 pip install -U gen3-tracker
@@ -163,5 +155,4 @@ endpoint: https://aced-idp.org
 username: someone@example.com
 ```
 
-Now that gen3-client and gen3-tracker are set up, see the [Quickstart Guide](/workflows/quick-start-guide) on how to upload data to a project.
-
+Now that gen3-client and gen3-tracker are set up, see the [Quickstart Guide](/workflows/quick-start-guide) for how to upload data to a project.
