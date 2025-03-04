@@ -38,6 +38,7 @@ nav:
 plugins:
   - search
   - macros
+  - open-in-new-tab # automatically open ext links in new tab
 
 repo_url: https://github.com/ACED-IDP/aced-idp.github.io
 repo_name: ACED-IDP/aced-idp.github.io

@@ -10,6 +10,8 @@ gen3 tracker, or g3t, is a command line tool for the ACED-IDP platform. It provi
 1. Uploading files for a new project to the platform
 2. Downloading an existing project from the platform
 
+Each step will outline the command to execute followed by a brief description of the command's functionality.
+
 ## Requirements
 
 Please ensure you have completed the following setup from the [Requirements](/requirements) page:
@@ -45,8 +47,8 @@ g3t is built on git, so many commands behave similarly to git with some key diff
 
 The first use case we will cover is how to add data to a new project on the ACED-IDP.
 
-!!!note
- The following examples will use the `aced` program with a project called `myproject` and an `aced` g3t profile.
+!!! note
+    The following examples will use the `aced` program with a project called `myproject` and an `aced` g3t profile.
 
 ### Check Project Permissions
 
@@ -97,7 +99,7 @@ g3t init aced-myproject
 
 ### Add files to the manifest
 
-Once your project is initialized, you can add files to the project's manifest. For example, if you have tsv files in a local directory called `folder/`, add them using `g3t add`
+Once your project is initialized, you can add files to the project's manifest. For example, let's say you have tsv files in a `folder/` directory within your current repository. Each of the tsv files are associated with a particular subject, say `patient_1` and `patient_2`. To add them using `g3t add`,
 
 ```bash
 g3t add folder/file.tsv --patient patient_1
@@ -108,7 +110,6 @@ g3t add folder/file2.tsv --patient patient_2
     - Just as a ship's manifest is an inventory of its cargo, the `MANIFEST/` directory is an inventory for each file's metadata
     - Each metadata entry is stored as a  `.dvc` file in the `MANIFEST` directory, where the dvc file path mirrors the original file path
     - **Example:** `folder/file.tsv` creates a `MANIFEST/folder/file.tsv.dvc` entry
-    
 * Using the patient flag is one way to associate a file with a particular subject, in this case associating each file with a specified patient identifier.
 * `g3t add` varies from `git add`, as the `.dvc` file is what gets staged rather than the potentially large data file
 * Multiple files can be added at the same time by wrapping a wildcard string in quotes, for example, `g3t add "*.csv"`.
@@ -169,7 +170,7 @@ g3t commit -m "adding tsv metadata"
 ```
 
 - Like git, this command bundles the staged files into a single set of changes.
-  - The `-m` flag provides a commit message detailing the changes 
+  - The `-m` flag adds a commit message to the changes 
   - If the commit is successful, you will see a summary of the changes logged
 - As a reminder, the files that are committed to git are the FHIR metadata in META/ and the .dvc entries in MANIFEST/, not the data files themselves
 - See [publishing a project](commit-push.md) for more info
