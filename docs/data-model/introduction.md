@@ -1,5 +1,6 @@
 
 # FHIR for Researchers
+
 Given all of the intricacies healthcare and experimental data, we use Fast Healthcare Interoperability Resources (FHIR) as a data model to ensure informaticians and analysts can concentrate on science, not data structures.  This document introduces model for Research Analysts and describes how an analyst can shape and query FHIR resources.
 
 ## What is FHIR?

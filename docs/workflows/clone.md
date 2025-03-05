@@ -6,15 +6,14 @@ The `g3t clone` command is used to clone a project from the remote repository. H
 * A subdirectory is created for the project, it is named after the `project_id`.
 * The project is initialized locally, including the `.g3t` and `META` directories.
 * The current metadata is downloaded from the remote repository.  
-* By default, data files are not downloaded by default:
-  * Use the `--data_type all` option to specify `all` files will be downloaded.
+* By default, data files are not downloaded by default
 
-```shell
+```sh
 g3t clone --help
-Usage: g3t clone [OPTIONS]
+Usage: g3t clone [OPTIONS] PROJECT_ID
 
   Clone meta and files from remote.
 
 Options:
-  --project_id TEXT             Gen3 program-project G3T_PROJECT_ID
+  --help  Show this message and exit.
 ```

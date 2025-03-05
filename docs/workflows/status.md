@@ -1,12 +1,11 @@
-# Status
+# g3t status
 
 ## Show the working tree status
 
-The `g3t status` command is used to view the commit history of a project:
+The `g3t status` command is used to view the state of your working directory. It functions the same as `git status`, providing info on: 
 
-* a list of commits including commit_id, message, files and resource_counts.
-* a list of files added to the project, but not yet committed.
-* a summary of resource counts on the remote repository.
+* Untracked files: files that have not been staged
+* Changes to be committed: files that have been staged (added) but not committed
 
 
 ```
