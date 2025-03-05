@@ -11,19 +11,16 @@ nav:
 - Getting Started:
   - requirements.md
   - workflows/quick-start-guide.md
-- Use Cases & Workflows:
+- CLI Reference:
   - workflows/creating-project.md
-  - Submitting Data:
-    - workflows/add-files.md
-    - Metadata:
-        - data-model/introduction.md
-        - workflows/metadata.md
-        - data-model/integration.md
-    - workflows/status.md
-    - workflows/commit-push.md
-  - Consuming Data:
-    - workflows/clone.md
-  - Exploring Data:
+  - workflows/add-files.md
+  - Adding FHIR Metadata:
+      - data-model/introduction.md
+      - workflows/metadata.md
+      - data-model/integration.md
+  - workflows/commit-push.md
+  - workflows/clone.md
+  - Exploring the Platform:
     - workflows/portal-explore.md
     - workflows/portal-download.md
     - workflows/query.md
