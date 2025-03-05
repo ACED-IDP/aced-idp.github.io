@@ -1,7 +1,7 @@
 # Common Errors
 
 ## .ndjson is out of date
-**Error:** After `g3t` adding and committing a file, when you go to submit your data, "Document
+**Error:** After `g3t` adding and committing a file, when you go to submit your data, "DocumentReference.ndjson is out of date",
 ```sh
 $ g3t add file.txt
 $ g3t commit -m "adding file.txt"
